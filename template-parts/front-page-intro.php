@@ -23,8 +23,8 @@ if (!$video_url && !$logo) {
 <!-- Introduction -->
 <section id="accueil" class="front-page-intro js-alwaysInView">
     <?php if ($video_url && strpos((string) $video_type, 'video/') === 0): ?>
-        <video class="intro-video" muted loop playsinline autoplay src="<?= esc_url($video_url); ?>"
-            type="<?= esc_attr($video_type); ?>">
+        <video class="intro-video" muted loop playsinline autoplay aria-hidden="true"
+            src="<?= esc_url($video_url); ?>">
         </video>
     <?php endif; ?>
 
@@ -36,7 +36,7 @@ if (!$video_url && !$logo) {
         <?php endif; ?>
 
         <?php if ($next_anchor): ?>
-            <a class="intro-next" href="#<?= esc_attr($next_anchor); ?>"
+            <a class="intro-next" href="<?= esc_url('#' . ltrim((string) $next_anchor, '#')); ?>"
                 aria-label="<?= esc_attr__('Aller à la section suivante', 'good-vibrations'); ?>">
                 <img src="<?= esc_url(get_template_directory_uri() . '/assets/medias/icons/arrow-circle-right.svg'); ?>"
                     alt="" width="226" height="180">

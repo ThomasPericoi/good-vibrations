@@ -22,6 +22,12 @@
     object-fit: cover;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .front-page-intro .intro-video {
+        display: none;
+    }
+}
+
 .front-page-intro:after {
     content: "";
     position: absolute;

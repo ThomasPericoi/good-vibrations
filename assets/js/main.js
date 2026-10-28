@@ -190,70 +190,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Play the decorative introduction only when motion is allowed.
-    const initFrontPageIntro = () => {
+    // Keep the header state in sync with the introduction section.
+    const initIntroHeaderState = () => {
         const intro = document.querySelector('.front-page-intro');
         if (!intro) {
             return;
         }
-
-        const video = intro.querySelector('.intro-video');
-        const toggle = intro.querySelector('.intro-video-toggle');
-        let visible = true;
-        let pausedByUser = false;
-        let requestedByUser = false;
 
         const updateHeader = () => {
             const rect = intro.getBoundingClientRect();
             body.classList.toggle('js-introVisible', rect.top <= (header?.offsetHeight || 0) && rect.bottom > (header?.offsetHeight || 0));
         };
 
-        const updateVideo = () => {
-            if (!video) {
-                return;
-            }
-            if (!visible || document.hidden || pausedByUser || (reduceMotionQuery.matches && !requestedByUser)) {
-                video.pause();
-                return;
-            }
-
-            const source = video.querySelector('source');
-            if (!source.hasAttribute('src')) {
-                source.src = source.dataset.src;
-                video.load();
-            }
-            video.play().catch(() => {});
-        };
-
         updateHeader();
         window.addEventListener('scroll', updateHeader, { passive: true });
         window.addEventListener('resize', updateHeader, { passive: true });
-
-        if (video && toggle) {
-            toggle.hidden = false;
-            const updateLabel = () => {
-                toggle.textContent = video.paused ? toggle.dataset.labelPlay : toggle.dataset.labelPause;
-            };
-            video.addEventListener('play', updateLabel);
-            video.addEventListener('pause', updateLabel);
-            toggle.addEventListener('click', () => {
-                pausedByUser = !video.paused;
-                requestedByUser = video.paused;
-                updateVideo();
-            });
-            reduceMotionQuery.addEventListener('change', () => {
-                requestedByUser = false;
-                updateVideo();
-            });
-            document.addEventListener('visibilitychange', updateVideo);
-            if ('IntersectionObserver' in window) {
-                new IntersectionObserver((entries) => {
-                    visible = entries[0].isIntersecting;
-                    updateVideo();
-                }).observe(intro);
-            }
-            updateVideo();
-        }
     };
 
     root.classList.add('js-enabled');
@@ -263,5 +214,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initRevealOnScroll();
     initOrderedLists();
     initMenu();
-    initFrontPageIntro();
+    initIntroHeaderState();
 });

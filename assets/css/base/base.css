@@ -1,0 +1,93 @@
+/* #Base
+--------------------------------------------------------------- */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *:before,
+    *:after {
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 1ms !important;
+    }
+}
+
+body {
+    color: var(--content-color);
+    background-color: var(--white);
+
+    &.body-freeze {
+        overflow: hidden;
+    }
+}
+
+#main {
+    margin-top: 0;
+}
+
+#main>section {
+    padding-block: var(--spacing-section-outer);
+    opacity: 1;
+    translate: none;
+}
+
+.js-enabled #main>section:not(.js-alwaysInView) {
+    opacity: 0;
+    translate: 0 20px;
+    transition: opacity calc(var(--transition-duration) * 2) ease-out, translate calc(var(--transition-duration) * 2) ease-out;
+
+    &.js-inView {
+        opacity: 1;
+        translate: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .js-enabled #main>section:not(.js-alwaysInView) {
+        opacity: 1;
+        transition: none;
+        translate: none;
+    }
+}
+
+img,
+svg,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+::selection {
+    color: var(--white);
+    background-color: var(--primary);
+}
+
+:focus-visible {
+    outline: 2px dashed var(--content-color);
+    outline-offset: 4px;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+}

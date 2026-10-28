@@ -1,0 +1,10 @@
+/* #Eyebrows
+--------------------------------------------------------------- */
+.eyebrow {
+    color: var(--accent-content-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.333;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}

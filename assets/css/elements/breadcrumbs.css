@@ -1,0 +1,12 @@
+/* #Breadcrumbs
+--------------------------------------------------------------- */
+.rank-math-breadcrumb a,
+.rank-math-breadcrumb .last,
+.rank-math-breadcrumb .separator {
+    color: var(--content-color);
+    font-size: 0.875em;
+}
+
+.rank-math-breadcrumb .last {
+    font-weight: 700;
+}

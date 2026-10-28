@@ -1,0 +1,93 @@
+{
+    "key": "group_gv_page_front_page",
+    "title": "Page type - Front page",
+    "fields": [
+        {
+            "key": "field_gv_intro_video",
+            "label": "Vidéo de fond",
+            "name": "intro_video",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "Vidéo décorative, lue sans son et en boucle.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "mime_types": "mp4,webm",
+            "min_size": 0,
+            "max_size": 0
+        },
+        {
+            "key": "field_gv_intro_logo",
+            "label": "Logo de l’introduction",
+            "name": "intro_logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Facultatif : utilise le logo du site si ce champ est vide. Le logo est affiché en blanc. Renseigner son texte alternatif dans la médiathèque.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_gv_intro_next_anchor",
+            "label": "Ancre de la section suivante",
+            "name": "intro_next_anchor",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Identifiant sans # de la section qui suit l’introduction. La flèche apparaît lorsque cette ancre est renseignée. Ne pas réutiliser cet identifiant sur un autre bloc.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "Options de la page d'accueil",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1793199337
+}

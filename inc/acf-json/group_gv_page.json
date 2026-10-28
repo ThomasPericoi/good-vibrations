@@ -1,0 +1,48 @@
+{
+    "key": "group_gv_page",
+    "title": "Content type - Page",
+    "fields": [
+        {
+            "key": "field_gv_page_eyebrow",
+            "label": "Surtitre",
+            "name": "page_eyebrow",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Facultatif. Affiché au-dessus du titre de la page.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "Options de page",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1793193012
+}

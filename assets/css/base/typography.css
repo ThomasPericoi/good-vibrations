@@ -1,0 +1,86 @@
+/* #Typography
+--------------------------------------------------------------- */
+body {
+    font-size: 1rem;
+    font-family: var(--body);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+p,
+.p-size,
+li {
+    color: inherit;
+    font-family: var(--body);
+    font-size: inherit;
+    line-height: 1.6;
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+main a:not([class]) {
+    color: var(--content-color);
+    font-weight: 600;
+}
+
+h1,
+.h1-size,
+h2,
+.h2-size,
+h3,
+.h3-size,
+h4,
+.h4-size,
+h5,
+.h5-size,
+h6,
+.h6-size {
+    color: inherit;
+    font-family: var(--bold);
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.08;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+}
+
+h1,
+.h1-size {
+    font-size: clamp(2.5rem, 6vw, 3.75rem);
+    line-height: 0.98;
+    text-transform: uppercase;
+}
+
+h2,
+.h2-size {
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    text-transform: uppercase;
+}
+
+h3,
+.h3-size {
+    font-size: clamp(1.5rem, 4vw, 2.125rem);
+}
+
+h4,
+.h4-size {
+    font-size: 1.5rem;
+}
+
+h5,
+.h5-size {
+    font-size: 1.25rem;
+}
+
+h6,
+.h6-size {
+    font-size: 1.125rem;
+}

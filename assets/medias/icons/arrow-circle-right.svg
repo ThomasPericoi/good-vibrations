@@ -1,0 +1,22 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 226 180" width="226" height="180">
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m0 180h225.61v-180.71h-225.61z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp2">
+			<path d="m0 180h225.61v-180.71h-225.61z"/>
+		</clipPath>
+	</defs>
+	<style>
+		.s0 { fill: none;stroke: #201f1f;stroke-width: 3.8 } 
+	</style>
+	<g id="Calque 1">
+		<g id="&lt;Clip Group&gt;" clip-path="url(#cp1)">
+			<path id="&lt;Path&gt;" class="s0" d="m223.73 89.65c0-48.87-39.61-88.48-88.48-88.48-48.86 0-88.48 39.61-88.48 88.48 0 48.86 39.62 88.48 88.48 88.48 48.87 0 88.48-39.62 88.48-88.48z"/>
+		</g>
+		<path id="&lt;Path&gt;" class="s0" d="m101.87 130.48l80.03-38.58-80.03-43.12"/>
+		<g id="&lt;Clip Group&gt;" clip-path="url(#cp2)">
+			<path id="&lt;Path&gt;" class="s0" d="m0 91.52h178.58"/>
+		</g>
+	</g>
+</svg>

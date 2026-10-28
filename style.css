@@ -1,0 +1,66 @@
+/*
+Theme Name: Good Vibrations
+Theme URI: https://thomaspericoi.com/
+Author: Thomas Pericoi
+Author URI: https://thomaspericoi.com/
+Description: A complete and customizable WordPress theme built for VIBÉO.
+Language: fr_FR
+Version: 1.0.0
+Requires at least: 6.5
+Requires PHP: 8.1
+Text Domain: good-vibrations
+*/
+
+/* #Imports
+--------------------------------------------------------------- */
+
+@import "./assets/css/base/imports.css";
+
+/* #Variables
+--------------------------------------------------------------- */
+
+@import "./assets/css/base/variables.css";
+
+/* #Base
+--------------------------------------------------------------- */
+
+@import "./assets/css/base/animations.css";
+@import "./assets/css/base/base.css";
+@import "./assets/css/base/typography.css";
+@import "./assets/css/base/content.css";
+
+/* #Elements
+--------------------------------------------------------------- */
+
+@import "./assets/css/elements/breadcrumbs.css";
+@import "./assets/css/elements/buttons.css";
+@import "./assets/css/elements/columns.css";
+@import "./assets/css/elements/containers.css";
+@import "./assets/css/elements/eyebrows.css";
+@import "./assets/css/elements/footer.css";
+@import "./assets/css/elements/forms.css";
+@import "./assets/css/elements/grids.css";
+@import "./assets/css/elements/header.css";
+@import "./assets/css/elements/medias.css";
+
+/* #Blocks
+--------------------------------------------------------------- */
+
+@import "./assets/css/blocks/button.css";
+
+/* #Template Parts
+--------------------------------------------------------------- */
+
+@import "./assets/css/template-parts/item-content.css";
+@import "./assets/css/template-parts/front-page-intro.css";
+
+/* #Templates
+--------------------------------------------------------------- */
+
+
+/* #Pages
+--------------------------------------------------------------- */
+
+@import "./assets/css/pages/404.css";
+@import "./assets/css/pages/index.css";
+@import "./assets/css/pages/page.css";

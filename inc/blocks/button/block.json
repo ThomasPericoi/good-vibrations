@@ -1,0 +1,18 @@
+{
+    "apiVersion": 2,
+    "name": "acf/gv-button",
+    "title": "Bouton VIBÉO",
+    "description": "Lien réutilisable, plein ou contour.",
+    "category": "good-vibrations",
+    "icon": "admin-links",
+    "textdomain": "good-vibrations",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "button.php"
+    },
+    "supports": {
+        "anchor": true,
+        "align": false,
+        "html": false
+    }
+}

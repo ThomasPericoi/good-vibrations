@@ -1,0 +1,52 @@
+/* #Variables
+--------------------------------------------------------------- */
+:root {
+    /* Colors */
+    --black: #1E1E1E;
+    --white: #FFFFFF;
+
+    --dove: #666666;
+    --silver: #DCDCDC;
+    --wild-sand: #F5F5F5;
+
+    --sand: #B2A58C;
+    --mist: #D6DADB;
+    --content-muted: rgba(30, 30, 30, 0.85);
+    --border-color: rgba(30, 30, 30, 0.15);
+
+    /* Theme colors */
+    --primary: var(--sand);
+    --content-color: var(--black);
+    --accent-content-color: var(--sand);
+
+    /* Fonts */
+    --bold: "Urbanist", sans-serif;
+    --body: "Urbanist", sans-serif;
+
+    /* Radius */
+    --border-radius: 0;
+
+    /* Spacings */
+    --header-height: 87px;
+    --container-padding: 2rem;
+
+    --spacing-xxs: 0.5rem;
+    --spacing-xs: 1rem;
+    --spacing-sm: 1.5rem;
+    --spacing-md: 3.75rem;
+    --spacing-lg: 6.25rem;
+
+    --spacing-section-inner: var(--spacing-md);
+    --spacing-section-outer: var(--spacing-lg);
+    --content-spacing: 0.75rem;
+
+    /* Motion */
+    --transition-duration: 250ms;
+    --transition-timing: ease;
+}
+
+@media screen and (min-width: 992px) {
+    :root {
+        --spacing-lg: 10rem;
+    }
+}

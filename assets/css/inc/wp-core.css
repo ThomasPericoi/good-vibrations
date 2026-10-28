@@ -1,0 +1,72 @@
+/* #WordPress Core
+--------------------------------------------------------------- */
+.wp-block-image figure {
+    width: fit-content;
+}
+
+.wp-block-image figure img {
+    width: unset;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+}
+
+.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption {
+    max-width: 100%;
+}
+
+.wp-caption img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.screen-reader-text,
+.screen-reader-only {
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    position: absolute !important;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    border: 0;
+    word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+    width: auto;
+    height: auto;
+    padding: 15px 23px 14px;
+    position: fixed !important;
+    top: 5px;
+    left: 5px;
+    z-index: 100000;
+    display: block;
+    clip: auto !important;
+    clip-path: none;
+    color: var(--black);
+    background-color: var(--white);
+}

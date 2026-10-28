@@ -1,0 +1,8 @@
+/* #404
+--------------------------------------------------------------- */
+.error-page .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+}

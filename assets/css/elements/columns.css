@@ -1,0 +1,36 @@
+/* #Columns
+--------------------------------------------------------------- */
+.cols-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-section-inner);
+}
+
+@media screen and (min-width: 992px) {
+    .cols-wrapper {
+        flex-direction: row;
+    }
+}
+
+.cols-wrapper.reverse {
+    flex-direction: column;
+}
+
+@media screen and (min-width: 992px) {
+    .cols-wrapper.reverse {
+        flex-direction: row-reverse;
+    }
+}
+
+.cols-wrapper > .col {
+    width: 100%;
+    flex: 1 1 0;
+}
+
+@media screen and (min-width: 992px) {
+    .cols-wrapper > .col {
+        max-width: 50%;
+    }
+}

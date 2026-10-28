@@ -1,0 +1,80 @@
+/* #Page
+--------------------------------------------------------------- */
+#main > .page-content {
+    padding-top: var(--spacing-md);
+}
+
+/* Page header */
+#main > .page-header {
+    padding-block: var(--spacing-section-outer);
+}
+
+#main > .page-header-has-content {
+    padding-bottom: 0;
+}
+
+.page-header .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--content-spacing);
+}
+
+.page-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Standard page */
+.page .page-header,
+.page .page-content {
+    color: var(--content-color);
+    background-color: var(--white);
+}
+
+.page .page-header .container,
+.page .page-content .container {
+    max-width: 760px;
+    padding-inline: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .page .page-header .container,
+    .page .page-content .container {
+        padding-inline: 2.5rem;
+    }
+}
+
+.page #main > .page-header {
+    padding-top: 4rem;
+}
+
+@media screen and (min-width: 768px) {
+    .page #main > .page-header {
+        padding-top: 7rem;
+    }
+}
+
+.page .page-header {
+    text-align: left;
+}
+
+.page .page-header .container {
+    align-items: stretch;
+    gap: 0.75rem;
+}
+
+.page .page-header .page-media {
+    margin-top: 2rem;
+}
+
+.page #main > .page-content {
+    padding-top: 3.5rem;
+    padding-bottom: 6rem;
+}
+
+/* Page separators */
+.page .page-content .formatted h2 {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}

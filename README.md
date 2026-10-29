@@ -77,3 +77,11 @@ No automated test suite or lint configuration is bundled with the theme. PHP and
 
 Private project developed for VIBÉO.
 All rights reserved.
+
+## Accueil — agence
+
+Synchroniser le groupe **Page type - Front page** dans ACF. Les deux parties utilisent les préfixes `agency_1` et `agency_2` : titre, sous-titre, deux boutons clonés et ancre suivante.
+
+`front-page-agency.php` appelle deux fois `template-parts/components/editorial-section.php`, avec les ancres `agency-1` et `agency-2`. Tous les champs sont lus à partir du préfixe. `template-parts/components/editorial-section.css` porte les styles communs ; `front-page-agency.css` inverse le dégradé de la première partie.
+
+La flèche de l’introduction pointe vers `agency-1`, puis celle de la première partie vers `agency-2`. La dernière ancre reste à renseigner lorsqu’une section suivante existe.

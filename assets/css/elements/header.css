@@ -78,7 +78,6 @@ body.js-menuOpened {
     opacity: 1;
 }
 
-/* Keep the full navigation accessible without JavaScript. */
 html:not(.js-enabled) #header {
     position: relative;
     top: auto;

@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const header = document.getElementById('header');
     const main = document.getElementById('main');
+    const innerHeader = header?.querySelector('.inner-header');
     const footer = document.querySelector('footer');
     const adminBar = body.classList.contains('admin-bar') ? document.getElementById('wpadminbar') : null;
     const nav = document.querySelector('.nav-wrapper');
@@ -49,8 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
             root.style.setProperty('--admin-bar-visible-height', `${adminBarVisibleHeight}px`);
         }
 
-        if (header) {
-            root.style.setProperty('--header-height', `${header.querySelector('.inner-header').offsetHeight}px`);
+        if (innerHeader) {
+            root.style.setProperty('--header-height', `${innerHeader.offsetHeight}px`);
         }
     };
 
@@ -90,8 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if ('ResizeObserver' in window && adminBar) {
             new ResizeObserver(updateLayoutVariables).observe(adminBar);
         }
-
-
     };
 
     // Print the theme signature in the console.
@@ -109,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const sections = Array.from(main.children).filter((element) => element.tagName === 'SECTION');
+        const sections = Array.from(main.children).filter((element) => element.tagName === 'SECTION' && !element.classList.contains('js-alwaysInView'));
         const revealSection = (section) => section.classList.add('js-inView');
 
         if (!sections.length || reduceMotionQuery.matches || !('IntersectionObserver' in window)) {
@@ -128,24 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, {
             rootMargin: '0px 0px -15% 0px',
-            threshold: 0.1,
+            threshold: 0,
         });
 
         window.requestAnimationFrame(() => {
             window.requestAnimationFrame(() => {
                 sections.forEach((section) => observer.observe(section));
             });
-        });
-    };
-
-    // Preserve custom ordered-list starts inside formatted content.
-    const initOrderedLists = () => {
-        document.querySelectorAll('.formatted ol[start]').forEach((list) => {
-            const start = Number.parseInt(list.getAttribute('start'), 10);
-
-            if (!Number.isNaN(start)) {
-                list.style.counterReset = `item ${start - 1}`;
-            }
         });
     };
 
@@ -162,9 +150,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         nav.addEventListener('click', (event) => {
-            if (event.target.closest('a')) {
-                closeMenu();
-                menuToggle.focus();
+            const link = event.target.closest('a[href]');
+            if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+                return;
+            }
+
+            closeMenu();
+            menuToggle.focus({ preventScroll: true });
+
+            const url = new URL(link.href, window.location.href);
+            if ((link.target && link.target !== '_self') || link.hasAttribute('download') || url.origin !== window.location.origin || url.pathname !== window.location.pathname || url.search !== window.location.search || !url.hash) {
+                return;
+            }
+
+            let target;
+            try {
+                target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+            } catch {
+                return;
+            }
+
+            if (target) {
+                if (!target.hasAttribute('tabindex')) {
+                    target.setAttribute('tabindex', '-1');
+                    target.addEventListener('blur', () => target.removeAttribute('tabindex'), { once: true });
+                }
+                // Keep native anchor scrolling and history, without a second scroll.
+                target.focus({ preventScroll: true });
             }
         });
 
@@ -185,9 +197,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (event.key === 'Escape' && body.classList.contains('js-menuOpened')) {
                 closeMenu();
-                menuToggle.focus();
+                menuToggle.focus({ preventScroll: true });
             }
         });
+    };
+
+    // Play the decorative video only while it is visible and motion is allowed.
+    const initIntroVideo = () => {
+        const video = document.querySelector('.intro-video');
+        if (!video) {
+            return;
+        }
+
+        const intro = video.closest('.front-page-intro');
+        if (!intro) {
+            return;
+        }
+
+        const rect = intro.getBoundingClientRect();
+        let visible = rect.bottom > 0 && rect.top < window.innerHeight;
+        const updatePlayback = () => {
+            if (!visible || document.hidden || reduceMotionQuery.matches) {
+                video.pause();
+            } else {
+                // Autoplay can be blocked by the browser or power-saving mode.
+                video.play().catch(() => {});
+            }
+        };
+
+        updatePlayback();
+        reduceMotionQuery.addEventListener('change', updatePlayback);
+        document.addEventListener('visibilitychange', updatePlayback);
+
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(([entry]) => {
+                visible = entry.isIntersecting;
+                updatePlayback();
+            }).observe(intro);
+        } else {
+            const updateVisibility = () => {
+                const rect = intro.getBoundingClientRect();
+                visible = rect.bottom > 0 && rect.top < window.innerHeight;
+                updatePlayback();
+            };
+            window.addEventListener('scroll', updateVisibility, { passive: true });
+            window.addEventListener('resize', updateVisibility, { passive: true });
+        }
     };
 
     // Keep the header state in sync with the introduction section.
@@ -212,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initLayoutVariables();
     initSignature();
     initRevealOnScroll();
-    initOrderedLists();
     initMenu();
     initIntroHeaderState();
+    initIntroVideo();
 });

@@ -35,12 +35,9 @@ if (!$video_url && !$logo) {
             <h1 class="screen-reader-text"><?= esc_html(get_the_title($post_id)); ?></h1>
         <?php endif; ?>
 
-        <?php if ($next_anchor): ?>
-            <a class="intro-next" href="<?= esc_url('#' . ltrim((string) $next_anchor, '#')); ?>"
-                aria-label="<?= esc_attr__('Aller à la section suivante', 'good-vibrations'); ?>">
-                <img src="<?= esc_url(get_template_directory_uri() . '/assets/medias/icons/arrow-circle-right.svg'); ?>"
-                    alt="" width="226" height="180">
-            </a>
-        <?php endif; ?>
+        <?php get_template_part('template-parts/components/section-next', null, array(
+            'anchor' => $next_anchor,
+            'class' => 'intro-next',
+        )); ?>
     </div>
 </section>

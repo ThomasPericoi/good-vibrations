@@ -12,4 +12,8 @@ get_template_part('template-parts/front-page-intro', null, array(
     'post_id' => $front_page_id,
 ));
 
+get_template_part('template-parts/front-page-agency', null, array(
+    'post_id' => $front_page_id,
+));
+
 get_footer();

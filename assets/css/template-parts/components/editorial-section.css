@@ -1,0 +1,93 @@
+/* #Editorial Section
+--------------------------------------------------------------- */
+#main>.editorial-section {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-block: 4rem;
+    display: flex;
+    align-items: center;
+    color: var(--black);
+    background: linear-gradient(115deg, var(--sand) 0%, var(--sand) 25%, var(--mist) 100%);
+}
+
+@media screen and (min-width: 768px) {
+    #main>.editorial-section {
+        padding-block: 6rem;
+    }
+}
+
+.editorial-section .editorial-content {
+    width: 100%;
+    max-width: none;
+    padding-inline: 7%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+    .editorial-section .editorial-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.editorial-section .editorial-text {
+    min-width: 0;
+    flex: 1;
+}
+
+.editorial-section .editorial-title {
+    font-size: clamp(2rem, 5.6vw, 5rem);
+    font-weight: 300;
+    line-height: 1.08;
+    text-transform: uppercase;
+    text-wrap: initial;
+}
+
+.editorial-section .editorial-subtitle {
+    color: var(--white);
+    font-size: clamp(1.5rem, 3.4vw, 3rem);
+    font-weight: 500;
+    line-height: 1.1;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+}
+
+.editorial-section .editorial-title+.editorial-subtitle {
+    margin-top: 0.5rem;
+}
+
+.editorial-section .editorial-actions {
+    margin-top: 3rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+}
+
+@media screen and (min-width: 768px) {
+    .editorial-section .editorial-actions {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.editorial-section .editorial-actions .btn {
+    width: 100%;
+    padding-inline: 2rem;
+    letter-spacing: 0.025em;
+}
+
+/* Secondary action */
+.editorial-section .editorial-secondary .btn-black {
+    color: var(--black);
+    background-color: transparent;
+    border-color: var(--black);
+}
+
+.editorial-section .editorial-secondary .btn-black:hover,
+.editorial-section .editorial-secondary .btn-black:focus-visible {
+    color: var(--white);
+    background-color: var(--black);
+}

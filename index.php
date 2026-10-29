@@ -30,7 +30,7 @@ endif;
         <?php if (have_posts()) : ?>
             <div class="grid grid-2">
                 <?php while (have_posts()) : the_post(); ?>
-                    <?php get_template_part('template-parts/item', 'content', array(
+                    <?php get_template_part('template-parts/components/item', 'content', array(
                         'index' => $wp_query->current_post,
                     )); ?>
                 <?php endwhile; ?>
@@ -41,7 +41,7 @@ endif;
                 'next_text' => esc_html__('Page suivante', 'good-vibrations'),
             )); ?>
         <?php else : ?>
-            <?php get_template_part('template-parts/content-none'); ?>
+            <?php get_template_part('template-parts/components/content-none'); ?>
         <?php endif; ?>
     </div>
 </section>

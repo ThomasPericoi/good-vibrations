@@ -1,0 +1,5 @@
+/* #Front Page Agency
+--------------------------------------------------------------- */
+#main>.front-page-agency-1 {
+    background: linear-gradient(115deg, var(--mist) 0%, var(--sand) 75%, var(--sand) 100%);
+}

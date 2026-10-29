@@ -3,6 +3,24 @@
     "title": "Page type - Front page",
     "fields": [
         {
+            "key": "field_6ae222a5d12fe",
+            "label": "1) Introduction",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
             "key": "field_gv_intro_video",
             "label": "Vidéo de fond",
             "name": "intro_video",
@@ -53,9 +71,259 @@
             "name": "intro_next_anchor",
             "aria-label": "",
             "type": "text",
-            "instructions": "Identifiant sans # de la section qui suit l’introduction. La flèche apparaît lorsque cette ancre est renseignée. Ne pas réutiliser cet identifiant sur un autre bloc.",
+            "instructions": "Identifiant sans # de la section qui suit l’introduction.",
             "required": 0,
-            "conditional_logic": false,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_gv_presentation_tab",
+            "label": "2) Agence - Partie 1",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_gv_presentation_title",
+            "label": "Titre",
+            "name": "agency_1_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Les retours à ligne sont pris en compte.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_gv_presentation_services",
+            "label": "Sous-titre",
+            "name": "agency_1_subtitle",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Les retours à ligne sont pris en compte.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_gv_presentation_primary",
+            "label": "Bouton principal",
+            "name": "agency_1_primary",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_gv_component_button"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_gv_presentation_secondary",
+            "label": "Bouton secondaire",
+            "name": "agency_1_secondary",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_gv_component_button"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_gv_presentation_next_anchor",
+            "label": "Ancre de la section suivante",
+            "name": "agency_1_next_anchor",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Identifiant sans # de la section suivante : agency-2 pour la deuxième partie. Laisser vide pour masquer la flèche.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_gv_manifesto_tab",
+            "label": "3) Agence - Partie 2",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_gv_manifesto_title",
+            "label": "Titre",
+            "name": "agency_2_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Les retours à ligne sont pris en compte.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_gv_manifesto_subtitle",
+            "label": "Sous-titre",
+            "name": "agency_2_subtitle",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Les retours à ligne sont pris en compte.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_gv_manifesto_primary",
+            "label": "Bouton principal",
+            "name": "agency_2_primary",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_gv_component_button"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_gv_manifesto_secondary",
+            "label": "Bouton secondaire",
+            "name": "agency_2_secondary",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_gv_component_button"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_gv_manifesto_next_anchor",
+            "label": "Ancre de la section suivante",
+            "name": "agency_2_next_anchor",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Identifiant sans # de la section suivante. Laisser vide pour masquer la flèche.",
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -89,5 +357,5 @@
     "display_title": "Options de la page d'accueil",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1793199337
+    "modified": 1793285833
 }

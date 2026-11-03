@@ -144,14 +144,6 @@ html:not(.js-enabled) #header {
     }
 }
 
-/* Current page */
-.menu-header>.current-menu-item>a,
-.menu-header>.current_page_item>a,
-.menu-header>li>a[aria-current="page"] {
-    color: var(--white);
-    font-weight: 700;
-}
-
 /* Actions */
 .header-actions,
 .menu-header-submenu {

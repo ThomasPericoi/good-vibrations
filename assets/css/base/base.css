@@ -46,17 +46,18 @@ body {
     translate: none;
 }
 
-.js-enabled #main>section:not(.js-alwaysInView) {
+.js-revealReady #main>section:not(.js-alwaysInView) {
     opacity: 0;
     transition: opacity calc(var(--transition-duration) * 2) ease-out;
 
-    &.js-inView {
+    &.js-inView,
+    &:focus-within {
         opacity: 1;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .js-enabled #main>section:not(.js-alwaysInView) {
+    .js-revealReady #main>section:not(.js-alwaysInView) {
         opacity: 1;
         transition: none;
         translate: none;

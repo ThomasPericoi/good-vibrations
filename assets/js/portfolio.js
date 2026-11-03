@@ -7,8 +7,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const desktop = window.matchMedia('(min-width: 992px)');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const slides = Array.from(track.children);
+    const getSlideLeft = (slide) => slide.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
+    const getCurrentIndex = () => {
+        let closest = 0;
+        let distance = Infinity;
+        slides.forEach((slide, index) => {
+            const difference = Math.abs(getSlideLeft(slide) - track.scrollLeft);
+            if (difference < distance) {
+                closest = index;
+                distance = difference;
+            }
+        });
+        return closest;
+    };
     const goToSlide = (slide, focus = true) => {
-        const left = slide.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
+        const left = getSlideLeft(slide);
         track.scrollTo({ left, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
         if (focus) {
             slide.focus({ preventScroll: true });
@@ -47,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         const { id, moved } = drag;
-        const index = Math.max(0, Math.min(slides.length - 1, Math.round(track.scrollLeft / track.clientWidth)));
+        const index = getCurrentIndex();
         drag = null;
         track.classList.remove('js-dragging');
         if (track.hasPointerCapture(id)) {
@@ -94,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!desktop.matches || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key) || event.altKey || event.ctrlKey || event.metaKey || event.target.closest('input, textarea, select, [contenteditable]')) {
             return;
         }
-        const current = Math.round(track.scrollLeft / track.clientWidth);
+        const current = getCurrentIndex();
         const index = event.key === 'Home' ? 0 : event.key === 'End' ? slides.length - 1 : current + (event.key === 'ArrowRight' ? 1 : -1);
         if (slides[index]) {
             event.preventDefault();
@@ -106,16 +119,28 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastWheel = 0;
     let lockedUntil = 0;
     window.addEventListener('wheel', (event) => {
-        if (drag || !desktop.matches || event.ctrlKey || document.body.classList.contains('js-menuOpened') || Math.abs(event.deltaX) > Math.abs(event.deltaY) || !event.deltaY || !event.cancelable) {
+        if (event.defaultPrevented || drag || !desktop.matches || event.ctrlKey || document.body.classList.contains('js-menuOpened') || Math.abs(event.deltaX) > Math.abs(event.deltaY) || !event.deltaY || !event.cancelable) {
             return;
+        }
+        // Leave nested scrolling areas and form controls in charge of their wheel events.
+        if (event.target.closest('input, textarea, select, [contenteditable]')) {
+            return;
+        }
+        for (let element = event.target; element && element !== document.body; element = element.parentElement) {
+            const overflow = window.getComputedStyle(element).overflowY;
+            if (element !== track && /auto|scroll/.test(overflow) && element.scrollHeight > element.clientHeight) {
+                return;
+            }
         }
         const rect = track.getBoundingClientRect();
         const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1);
         const direction = Math.sign(delta);
-        const current = Math.round(track.scrollLeft / track.clientWidth);
+        const current = getCurrentIndex();
         const target = slides[current + direction];
         const aligned = Math.abs(rect.top) <= 2;
-        const entering = direction > 0 && rect.top > 0 && rect.top <= delta;
+        const entering = direction > 0
+            ? rect.top > 0 && rect.top <= delta
+            : rect.top < 0 && rect.top >= delta;
         // Long slides must remain vertically readable, including at high zoom.
         if ((!aligned && !entering) || rect.height > window.innerHeight + 4) {
             return;

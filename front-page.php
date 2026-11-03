@@ -8,6 +8,17 @@ if (get_option('show_on_front') !== 'page') {
 $front_page_id = (int) get_option('page_on_front');
 get_header();
 
+if (post_password_required($front_page_id)) {
+    echo get_the_password_form($front_page_id);
+    get_footer();
+    return;
+}
+
+if (!function_exists('get_field')) {
+    get_footer();
+    return;
+}
+
 get_template_part('template-parts/front-page-intro', null, array(
     'post_id' => $front_page_id,
 ));

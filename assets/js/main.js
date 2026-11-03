@@ -130,10 +130,13 @@ document.addEventListener('DOMContentLoaded', () => {
             threshold: 0,
         });
 
-        window.requestAnimationFrame(() => {
-            window.requestAnimationFrame(() => {
-                sections.forEach((section) => observer.observe(section));
-            });
+        root.classList.add('js-revealReady');
+        sections.forEach((section) => observer.observe(section));
+        reduceMotionQuery.addEventListener('change', () => {
+            if (reduceMotionQuery.matches) {
+                sections.forEach(revealSection);
+                observer.disconnect();
+            }
         });
     };
 

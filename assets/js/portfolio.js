@@ -7,12 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const desktop = window.matchMedia('(min-width: 992px)');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const slides = Array.from(track.children);
+    if (!slides.length) {
+        return;
+    }
+
     const getSlideLeft = (slide) => slide.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
     const getCurrentIndex = () => {
+        const trackLeft = track.getBoundingClientRect().left;
         let closest = 0;
         let distance = Infinity;
         slides.forEach((slide, index) => {
-            const difference = Math.abs(getSlideLeft(slide) - track.scrollLeft);
+            const difference = Math.abs(slide.getBoundingClientRect().left - trackLeft);
             if (difference < distance) {
                 closest = index;
                 distance = difference;
@@ -93,13 +98,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     track.addEventListener('click', (event) => {
         const link = event.target.closest('.section-next');
-        if (!desktop.matches || !link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+        if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
             return;
         }
         const target = slides.find((slide) => '#' + slide.id === link.getAttribute('href'));
         if (target) {
             event.preventDefault();
-            goToSlide(target);
+            if (desktop.matches) {
+                goToSlide(target);
+                return;
+            }
+
+            window.history.pushState(null, '', link.href);
+            target.focus({ preventScroll: true });
+            window.scrollTo({
+                top: target.getBoundingClientRect().top + window.scrollY,
+                behavior: reducedMotion.matches ? 'instant' : 'smooth',
+            });
         }
     });
 
@@ -126,12 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.target.closest('input, textarea, select, [contenteditable]')) {
             return;
         }
-        for (let element = event.target; element && element !== document.body; element = element.parentElement) {
-            const overflow = window.getComputedStyle(element).overflowY;
-            if (element !== track && /auto|scroll/.test(overflow) && element.scrollHeight > element.clientHeight) {
-                return;
-            }
-        }
+
         const rect = track.getBoundingClientRect();
         const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1);
         const direction = Math.sign(delta);
@@ -145,6 +155,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if ((!aligned && !entering) || rect.height > window.innerHeight + 4) {
             return;
         }
+
+        for (let element = event.target; element && element !== document.body; element = element.parentElement) {
+            const overflow = window.getComputedStyle(element).overflowY;
+            if (element !== track && /auto|scroll/.test(overflow) && element.scrollHeight > element.clientHeight) {
+                return;
+            }
+        }
+
         const now = performance.now();
         const busy = now < lockedUntil || (lastWheel && now - lastWheel < 180);
         if (!target && !busy) {

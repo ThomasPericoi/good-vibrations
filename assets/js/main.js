@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('.nav-wrapper');
     const menuToggle = document.getElementById('menu-toggle');
     const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let adminBarVisibleHeight;
 
     // Toggle inert and aria-hidden together for accessible hidden states.
     const setElementState = (element, enabled) => {
@@ -36,35 +37,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const closeMenu = () => setMenuState(false);
 
-    // Keep viewport, scrollbar, admin bar, and header values in CSS variables.
-    const updateLayoutVariables = () => {
-        root.style.setProperty('--viewport-height', `${window.innerHeight}px`);
-        root.style.setProperty('--scrollbar-width', `${window.innerWidth - root.clientWidth}px`);
-        root.style.setProperty('--admin-bar-visible-height', '0px');
-
-        if (adminBar) {
-            const adminBarRect = adminBar.getBoundingClientRect();
-            const adminBarVisibleHeight = Math.max(0, Math.min(adminBarRect.bottom, adminBarRect.height));
-
-            root.style.setProperty('--admin-bar-visible-height', `${adminBarVisibleHeight}px`);
-        }
-
+    const updateHeaderHeight = () => {
         if (innerHeader) {
             root.style.setProperty('--header-height', `${innerHeader.offsetHeight}px`);
         }
     };
 
-    // Batch layout variable updates into the next animation frame.
-    let layoutTicking = false;
-    const requestLayoutVariablesUpdate = () => {
-        if (layoutTicking) {
+    const updateAdminBarHeight = () => {
+        const rect = adminBar?.getBoundingClientRect();
+        const nextHeight = rect ? Math.max(0, Math.min(rect.bottom, rect.height)) : 0;
+        if (nextHeight !== adminBarVisibleHeight) {
+            root.style.setProperty('--admin-bar-visible-height', `${nextHeight}px`);
+            adminBarVisibleHeight = nextHeight;
+        }
+    };
+
+    // Update viewport measurements only when the viewport or header changes.
+    const updateLayoutVariables = () => {
+        root.style.setProperty('--viewport-height', `${window.innerHeight}px`);
+        root.style.setProperty('--scrollbar-width', `${window.innerWidth - root.clientWidth}px`);
+        updateHeaderHeight();
+        updateAdminBarHeight();
+    };
+
+    // Batch admin bar visibility updates without measuring unrelated layout.
+    let adminBarUpdatePending = false;
+    const requestAdminBarUpdate = () => {
+        if (adminBarUpdatePending) {
             return;
         }
 
-        layoutTicking = true;
+        adminBarUpdatePending = true;
         window.requestAnimationFrame(() => {
-            updateLayoutVariables();
-            layoutTicking = false;
+            updateAdminBarHeight();
+            adminBarUpdatePending = false;
         });
     };
 
@@ -79,16 +85,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const initLayoutVariables = () => {
         updateLayoutVariables();
         window.addEventListener('resize', onViewportChange, { passive: true });
-        window.addEventListener('scroll', requestLayoutVariablesUpdate, { passive: true });
+        window.addEventListener('scroll', requestAdminBarUpdate, { passive: true });
         window.visualViewport?.addEventListener('resize', updateLayoutVariables, { passive: true });
-        window.visualViewport?.addEventListener('scroll', requestLayoutVariablesUpdate, { passive: true });
+        window.visualViewport?.addEventListener('scroll', requestAdminBarUpdate, { passive: true });
 
         if ('ResizeObserver' in window && header) {
-            new ResizeObserver(updateLayoutVariables).observe(header);
+            new ResizeObserver(updateHeaderHeight).observe(header);
         }
 
         if ('ResizeObserver' in window && adminBar) {
-            new ResizeObserver(updateLayoutVariables).observe(adminBar);
+            new ResizeObserver(updateAdminBarHeight).observe(adminBar);
         }
     };
 

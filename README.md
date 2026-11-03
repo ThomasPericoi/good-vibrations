@@ -34,10 +34,9 @@ Feature CSS modules are imported from `style.css`; the reset and WordPress compa
 * responsive menu, keyboard controls and accessible hidden states
 * viewport, header and admin bar CSS variables
 * reduced-motion-aware section reveals and introduction video handling
-* ordered-list start preservation
 * theme signature
 
-Feature-specific behaviour is organized in dedicated initializer functions.
+The portfolio slider is loaded separately on the front page.
 
 ### PHP
 

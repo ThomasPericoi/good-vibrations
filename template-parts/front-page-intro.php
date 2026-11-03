@@ -21,7 +21,7 @@ if (!$video_url && !$logo) {
 ?>
 
 <!-- Introduction -->
-<section id="accueil" class="front-page-intro js-alwaysInView">
+<section id="intro" class="front-page-intro js-alwaysInView">
     <?php if ($video_url && strpos((string) $video_type, 'video/') === 0): ?>
         <video class="intro-video" muted loop playsinline autoplay aria-hidden="true"
             src="<?= esc_url($video_url); ?>">
@@ -35,9 +35,10 @@ if (!$video_url && !$logo) {
             <h1 class="screen-reader-text"><?= esc_html(get_the_title($post_id)); ?></h1>
         <?php endif; ?>
 
-        <?php get_template_part('template-parts/components/section-next', null, array(
-            'anchor' => $next_anchor,
-            'class' => 'intro-next',
-        )); ?>
+
     </div>
+    <?php get_template_part('template-parts/components/section-next', null, array(
+            'anchor' => $next_anchor,
+            'color' => 'light',
+        )); ?>
 </section>

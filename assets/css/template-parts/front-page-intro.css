@@ -11,6 +11,15 @@
     color: var(--white);
     background: linear-gradient(115deg, var(--sand), var(--mist));
     isolation: isolate;
+
+    &:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-color: rgba(30, 30, 30, 0.2);
+        pointer-events: none;
+    }
 }
 
 .front-page-intro .intro-video {
@@ -26,15 +35,6 @@
     .front-page-intro .intro-video {
         display: none;
     }
-}
-
-.front-page-intro:after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background-color: rgba(30, 30, 30, 0.2);
-    pointer-events: none;
 }
 
 .front-page-intro .intro-content {
@@ -71,10 +71,6 @@
     width: 100%;
     height: auto;
     display: block;
-    filter: brightness(0) invert(1);
-}
-
-.front-page-intro .intro-next img {
     filter: brightness(0) invert(1);
 }
 

@@ -7,7 +7,8 @@
     display: flex;
     align-items: center;
     color: var(--black);
-    background: linear-gradient(115deg, var(--sand) 0%, var(--sand) 25%, var(--mist) 100%);
+
+
 }
 
 @media screen and (min-width: 768px) {
@@ -71,23 +72,4 @@
         flex-direction: row;
         align-items: center;
     }
-}
-
-.editorial-section .editorial-actions .btn {
-    width: 100%;
-    padding-inline: 2rem;
-    letter-spacing: 0.025em;
-}
-
-/* Secondary action */
-.editorial-section .editorial-secondary .btn-black {
-    color: var(--black);
-    background-color: transparent;
-    border-color: var(--black);
-}
-
-.editorial-section .editorial-secondary .btn-black:hover,
-.editorial-section .editorial-secondary .btn-black:focus-visible {
-    color: var(--white);
-    background-color: var(--black);
 }

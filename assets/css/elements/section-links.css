@@ -2,19 +2,27 @@
 --------------------------------------------------------------- */
 .section-next {
     width: 4.5rem;
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    z-index: 1;
     min-height: 44px;
     display: flex;
     align-items: center;
     align-self: center;
     flex: 0 0 auto;
-    transform: rotate(90deg);
+    transform: translateX(-50%) rotate(90deg);
     transition: translate var(--transition-duration) var(--transition-timing);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
     .section-next {
         width: 5rem;
-        transform: none;
+        top: 50%;
+        right: 2vw;
+        bottom: auto;
+        left: auto;
+        transform: translateY(-50%);
     }
 }
 
@@ -24,14 +32,46 @@
     display: block;
 }
 
+.section-next-light img {
+    filter: brightness(0) invert(1);
+}
+
 .section-next:hover,
 .section-next:focus-visible {
     translate: 0 0.5rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
+
     .section-next:hover,
     .section-next:focus-visible {
         translate: 0.5rem 0;
+    }
+}
+
+/* Anchor positioning is relative to the whole section. */
+#main>section:has(>.section-next) {
+    position: relative;
+}
+
+#main>section:has(>.section-next)>:is(.intro-content, .editorial-content, .conception-content, .steps-content, .stares-content) {
+    margin-bottom: 6rem;
+}
+
+@media screen and (min-width: 992px) {
+    #main>section:has(>.section-next)>:is(.intro-content, .editorial-content, .conception-content, .steps-content, .stares-content) {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #main>section:has(>.section-next)>:is(.intro-content, .editorial-content, .conception-content) {
+        padding-right: calc(4vw + 5rem);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #main>:is(.front-page-steps, .front-page-stares):has(>.section-next) {
+        padding-right: calc(4vw + 5rem);
     }
 }

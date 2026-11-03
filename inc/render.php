@@ -15,7 +15,7 @@ function gv_get_cta($selector_prefix, $post_id = false, $sub_field = false)
         return '';
     }
 
-    $color = in_array($color, array('primary', 'black', 'white'), true) ? $color : 'primary';
+    $color = in_array($color, array('primary', 'black', 'white', 'outline'), true) ? $color : 'primary';
     $target = ($text_cta['target'] ?? '') === '_blank' ? '_blank' : '_self';
     $rel = $target === '_blank' ? ' rel="noopener noreferrer"' : '';
 

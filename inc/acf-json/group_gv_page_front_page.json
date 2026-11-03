@@ -105,6 +105,35 @@
             "selected": 0
         },
         {
+            "key": "field_gv_agency_1_background",
+            "label": "Fond",
+            "name": "agency_1_background",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Sens du dégradé de la section.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "mist-sand": "Gris → Sable",
+                "sand-mist": "Sable → Gris"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
             "key": "field_gv_presentation_title",
             "label": "Titre",
             "name": "agency_1_title",
@@ -163,7 +192,7 @@
             "clone": [
                 "group_gv_component_button"
             ],
-            "display": "seamless",
+            "display": "group",
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 1
@@ -185,7 +214,7 @@
             "clone": [
                 "group_gv_component_button"
             ],
-            "display": "seamless",
+            "display": "group",
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 1
@@ -228,6 +257,35 @@
             "placement": "left",
             "endpoint": 0,
             "selected": 0
+        },
+        {
+            "key": "field_gv_agency_2_background",
+            "label": "Fond",
+            "name": "agency_2_background",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Sens du dégradé de la section.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "mist-sand": "Gris → Sable",
+                "sand-mist": "Sable → Gris"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_gv_manifesto_title",
@@ -288,7 +346,7 @@
             "clone": [
                 "group_gv_component_button"
             ],
-            "display": "seamless",
+            "display": "group",
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 1
@@ -310,7 +368,7 @@
             "clone": [
                 "group_gv_component_button"
             ],
-            "display": "seamless",
+            "display": "group",
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 1
@@ -331,6 +389,921 @@
             },
             "default_value": "",
             "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_gv_conception_tab",
+            "label": "4) Conception",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_gv_conception_image",
+            "label": "Image",
+            "name": "conception_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_gv_conception_title",
+            "label": "Titre",
+            "name": "conception_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 2,
+            "new_lines": "br",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_gv_conception_text",
+            "label": "Texte",
+            "name": "conception_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 8,
+            "new_lines": "br",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_gv_conception_services",
+            "label": "Formats",
+            "name": "conception_services",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "button_label": "Ajouter un format",
+            "min": 0,
+            "max": 0,
+            "rows_per_page": 20,
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_gv_conception_service_title",
+                    "label": "Titre",
+                    "name": "conception_service_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_gv_conception_services"
+                },
+                {
+                    "key": "field_gv_conception_service_detail",
+                    "label": "Précision",
+                    "name": "conception_service_detail",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_gv_conception_services"
+                }
+            ]
+        },
+        {
+            "key": "field_gv_conception_next_anchor",
+            "label": "Ancre de la section suivante",
+            "name": "conception_next_anchor",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Identifiant sans #. Laisser vide pour masquer la flèche.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_gv_steps_tab",
+            "label": "5) Étapes",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_gv_steps_background",
+            "label": "Fond",
+            "name": "steps_background",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Sens du dégradé de la section.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "mist-sand": "Gris → Sable",
+                "sand-mist": "Sable → Gris"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_gv_steps_title",
+            "label": "Titre",
+            "name": "steps_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Les retours à ligne sont pris en compte.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_gv_steps_steps",
+            "label": "Étapes",
+            "name": "steps_steps",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "button_label": "Ajouter une étape",
+            "rows_per_page": 20,
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_gv_steps_step_title",
+                    "label": "Titre",
+                    "name": "steps_step_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_gv_steps_steps"
+                },
+                {
+                    "key": "field_gv_steps_step_text",
+                    "label": "Texte",
+                    "name": "steps_step_text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "rows": 4,
+                    "new_lines": "br",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_gv_steps_steps"
+                }
+            ]
+        },
+        {
+            "key": "field_gv_steps_primary",
+            "label": "Bouton principal",
+            "name": "steps_primary",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_gv_component_button"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_gv_steps_secondary",
+            "label": "Bouton secondaire",
+            "name": "steps_secondary",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_gv_component_button"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_gv_steps_next_anchor",
+            "label": "Ancre de la section suivante",
+            "name": "steps_next_anchor",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Identifiant sans #. Laisser vide pour masquer la flèche.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_gv_stares_tab",
+            "label": "6) Regards",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_gv_stares_title",
+            "label": "Titre",
+            "name": "stares_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 2,
+            "new_lines": "br",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_gv_stares_members",
+            "label": "Portraits",
+            "name": "stares_members",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "button_label": "Ajouter un portrait",
+            "rows_per_page": 20,
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_gv_stares_member_image",
+                    "label": "Portrait",
+                    "name": "stares_member_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_gv_stares_members"
+                },
+                {
+                    "key": "field_gv_stares_member_name",
+                    "label": "Nom",
+                    "name": "stares_member_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_gv_stares_members"
+                },
+                {
+                    "key": "field_gv_stares_member_role",
+                    "label": "Rôle",
+                    "name": "stares_member_role",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_gv_stares_members"
+                },
+                {
+                    "key": "field_gv_stares_member_bio",
+                    "label": "Biographie",
+                    "name": "stares_member_bio",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "default_value": "",
+                    "delay": 0,
+                    "parent_repeater": "field_gv_stares_members"
+                }
+            ]
+        },
+        {
+            "key": "field_gv_stares_next_anchor",
+            "label": "Ancre de la section suivante",
+            "name": "stares_next_anchor",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Identifiant sans #. Laisser vide pour masquer la flèche.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_gv_portfolio_tab",
+            "label": "7) Portfolio",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_gv_portfolio_title",
+            "name": "portfolio_title",
+            "label": "Titre d’introduction",
+            "type": "textarea",
+            "required": 0,
+            "instructions": "",
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 2,
+            "new_lines": "br",
+            "default_value": ""
+        },
+        {
+            "key": "field_gv_portfolio_intro_arrow",
+            "name": "portfolio_intro_arrow",
+            "label": "Couleur des flèches et de la pagination",
+            "type": "select",
+            "required": 0,
+            "instructions": "",
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "dark": "Sombre",
+                "light": "Claire"
+            },
+            "default_value": "dark",
+            "return_format": "value"
+        },
+        {
+            "key": "field_gv_portfolio_intro",
+            "label": "Bouton d’introduction",
+            "name": "portfolio_intro",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_gv_component_button"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_gv_portfolio_projects",
+            "name": "portfolio_projects",
+            "label": "Portfolio",
+            "type": "repeater",
+            "required": 0,
+            "instructions": "",
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "button_label": "Ajouter un projet",
+            "sub_fields": [
+                {
+                    "key": "field_gv_portfolio_project_image",
+                    "name": "portfolio_project_image",
+                    "label": "Image",
+                    "type": "image",
+                    "required": 0,
+                    "instructions": "",
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all"
+                },
+                {
+                    "key": "field_gv_portfolio_project_label",
+                    "name": "portfolio_project_label",
+                    "label": "Surtitre",
+                    "type": "text",
+                    "required": 0,
+                    "instructions": "",
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "key": "field_gv_portfolio_project_title",
+                    "name": "portfolio_project_title",
+                    "label": "Titre",
+                    "type": "text",
+                    "required": 0,
+                    "instructions": "",
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "key": "field_gv_portfolio_project_arrow",
+                    "name": "portfolio_project_arrow",
+                    "label": "Couleur des flèches et de la pagination",
+                    "type": "select",
+                    "required": 0,
+                    "instructions": "",
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "dark": "Sombre",
+                        "light": "Claire"
+                    },
+                    "default_value": "dark",
+                    "return_format": "value"
+                }
+            ]
+        },
+        {
+            "key": "field_gv_portfolio_closing_image",
+            "name": "portfolio_closing_image",
+            "label": "Image de conclusion",
+            "type": "image",
+            "required": 0,
+            "instructions": "",
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_gv_portfolio_closing",
+            "label": "Bouton de conclusion",
+            "name": "portfolio_closing",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_gv_component_button"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_gv_portfolio_closing_arrow",
+            "name": "portfolio_closing_arrow",
+            "label": "Couleur des flèches et de la pagination",
+            "type": "select",
+            "required": 0,
+            "instructions": "",
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "dark": "Sombre",
+                "light": "Claire"
+            },
+            "default_value": "dark",
+            "return_format": "value"
+        },
+        {
+            "key": "field_gv_portfolio_next_anchor",
+            "name": "portfolio_next_anchor",
+            "label": "Ancre de la section suivante",
+            "type": "text",
+            "required": 0,
+            "instructions": "Identifiant sans # de la section après le portfolio. Laisser vide pour masquer la dernière flèche.",
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_6ae4a3dd529ac",
+            "label": "8) Contact",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_6ae4a3f668120",
+            "label": "Fond",
+            "name": "contact_background",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Sens du dégradé de la section.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "mist-sand": "Gris → Sable",
+                "sand-mist": "Sable → Gris"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_gv_contact_title",
+            "label": "Titre",
+            "name": "contact_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Les retours à ligne sont pris en compte.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_gv_contact_subtitle",
+            "label": "Sous-titre",
+            "name": "contact_subtitle",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Les retours à ligne sont pris en compte.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_gv_contact_primary",
+            "label": "Bouton principal",
+            "name": "contact_primary",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_gv_component_button"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_gv_contact_secondary",
+            "label": "Bouton secondaire",
+            "name": "contact_secondary",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_gv_component_button"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_gv_contact_next_anchor",
+            "label": "Ancre de la section suivante",
+            "name": "contact_next_anchor",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Identifiant sans # de la section suivante. Laisser vide pour masquer la flèche.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
             "placeholder": "",
             "prepend": "",
             "append": ""
@@ -357,5 +1330,5 @@
     "display_title": "Options de la page d'accueil",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1793285833
+    "modified": 1793714044
 }

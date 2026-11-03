@@ -1,0 +1,166 @@
+/* #Front Page Portfolio
+--------------------------------------------------------------- */
+#main>.front-page-portfolio {
+    padding: 0;
+}
+
+.portfolio-track {
+    min-width: 0;
+}
+
+@media screen and (min-width: 992px) {
+    .portfolio-track {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        cursor: grab;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .portfolio-track.js-dragging {
+        cursor: grabbing;
+        user-select: none;
+        scroll-snap-type: none;
+        scroll-behavior: auto;
+    }
+}
+
+.portfolio-slide {
+    position: relative;
+    min-width: 0;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--mist);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    isolation: isolate;
+}
+
+@media screen and (min-width: 992px) {
+    .portfolio-slide {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+}
+
+.portfolio-content {
+    padding: 4rem 7%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.portfolio-slide:has(>.section-next) .portfolio-content {
+    padding-bottom: 9rem;
+}
+
+@media screen and (min-width: 992px) {
+    .portfolio-slide:has(>.section-next) .portfolio-content {
+        padding-right: calc(4vw + 5rem);
+        padding-bottom: 4rem;
+    }
+}
+
+.portfolio-intro {
+    background-color: var(--sand);
+}
+
+.portfolio-title {
+    margin: 0;
+    font-size: clamp(2.5rem, 5.6vw, 7rem);
+    font-weight: 300;
+    line-height: 1.08;
+    text-transform: uppercase;
+}
+
+.portfolio-intro .portfolio-action {
+    margin-top: auto;
+    padding-top: 3rem;
+}
+
+.portfolio-project .portfolio-content {
+    gap: 0.125rem;
+}
+
+.portfolio-label {
+    margin: 0;
+    color: var(--black);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.portfolio-project .portfolio-title {
+    color: var(--black);
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1;
+    overflow-wrap: anywhere;
+}
+
+.portfolio-closing .portfolio-content {
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-closing .btn {
+    padding: 2rem 3rem;
+    text-align: center;
+}
+
+.portfolio-pagination {
+    position: absolute;
+    right: 7%;
+    bottom: 2rem;
+    margin: 0;
+    color: var(--black);
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    line-height: 1.5;
+}
+
+@media screen and (min-width: 992px) {
+    .portfolio-pagination {
+        bottom: 4rem;
+    }
+}
+
+.portfolio-pagination-light {
+    color: var(--white);
+}
+
+.portfolio-slide>.section-previous {
+    display: none;
+}
+
+@media screen and (min-width: 992px) {
+    .portfolio-slide>.section-previous {
+        display: flex;
+        left: 2vw;
+        right: auto;
+        transform: translateY(-50%) rotate(180deg);
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    .portfolio-slide>.section-previous:hover,
+    .portfolio-slide>.section-previous:focus-visible {
+        translate: -0.5rem 0;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .portfolio-slide:has(>.section-previous) .portfolio-content {
+        padding-left: calc(4vw + 5rem);
+    }
+}

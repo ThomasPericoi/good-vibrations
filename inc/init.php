@@ -225,6 +225,9 @@ function gv_enqueue_theme_scripts()
     wp_register_script('script', get_template_directory_uri() . '/assets/js/main.js', array('ascii-printer'), gv_get_asset_version('assets/js/main.js'), true);
     wp_enqueue_script('ascii-printer');
     wp_enqueue_script('script');
+    if (is_front_page()) {
+        wp_enqueue_script('portfolio', get_template_directory_uri() . '/assets/js/portfolio.js', array(), gv_get_asset_version('assets/js/portfolio.js'), true);
+    }
 }
 add_action('wp_enqueue_scripts', 'gv_enqueue_theme_scripts');
 

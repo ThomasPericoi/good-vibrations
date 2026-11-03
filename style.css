@@ -34,6 +34,7 @@ Text Domain: good-vibrations
 
 @import "./assets/css/elements/breadcrumbs.css";
 @import "./assets/css/elements/buttons.css";
+@import "./assets/css/elements/backgrounds.css";
 @import "./assets/css/elements/columns.css";
 @import "./assets/css/elements/containers.css";
 @import "./assets/css/elements/eyebrows.css";
@@ -54,8 +55,11 @@ Text Domain: good-vibrations
 
 @import "./assets/css/template-parts/item-content.css";
 @import "./assets/css/template-parts/front-page-intro.css";
+@import "./assets/css/template-parts/front-page-conception.css";
+@import "./assets/css/template-parts/front-page-steps.css";
+@import "./assets/css/template-parts/front-page-stares.css";
+@import "./assets/css/template-parts/front-page-portfolio.css";
 @import "./assets/css/template-parts/components/editorial-section.css";
-@import "./assets/css/template-parts/front-page-agency.css";
 
 /* #Templates
 --------------------------------------------------------------- */

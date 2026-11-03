@@ -19,7 +19,8 @@
             "choices": {
                 "primary": "Primary",
                 "black": "Black",
-                "white": "White"
+                "white": "White",
+                "outline": "Borduré"
             },
             "default_value": "primary",
             "return_format": "value",
@@ -71,5 +72,5 @@
     "display_title": "Button options",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1793196453
+    "modified": 1793368010
 }

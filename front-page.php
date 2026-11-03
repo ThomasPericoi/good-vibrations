@@ -12,8 +12,42 @@ get_template_part('template-parts/front-page-intro', null, array(
     'post_id' => $front_page_id,
 ));
 
-get_template_part('template-parts/front-page-agency', null, array(
+get_template_part('template-parts/components/editorial-section', null, array(
     'post_id' => $front_page_id,
+    'prefix' => 'agency_1',
+    'anchor' => 'agency-1',
+    'class' => 'front-page-agency-1',
+));
+
+get_template_part('template-parts/components/editorial-section', null, array(
+    'post_id' => $front_page_id,
+    'prefix' => 'agency_2',
+    'anchor' => 'agency-2',
+    'class' => 'front-page-agency-2',
+));
+
+
+get_template_part('template-parts/front-page-conception', null, array(
+    'post_id' => $front_page_id,
+));
+
+get_template_part('template-parts/front-page-steps', null, array(
+    'post_id' => $front_page_id,
+));
+
+get_template_part('template-parts/front-page-stares', null, array(
+    'post_id' => $front_page_id,
+));
+
+get_template_part('template-parts/front-page-portfolio', null, array(
+    'post_id' => $front_page_id,
+));
+
+get_template_part('template-parts/components/editorial-section', null, array(
+    'post_id' => $front_page_id,
+    'prefix' => 'contact',
+    'anchor' => 'contact',
+    'class' => 'front-page-contact',
 ));
 
 get_footer();

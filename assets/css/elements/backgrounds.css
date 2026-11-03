@@ -1,0 +1,9 @@
+/* #Backgrounds
+--------------------------------------------------------------- */
+.editorial-background-mist-sand {
+    background: linear-gradient(115deg, var(--mist) 0%, var(--sand) 75%, var(--sand) 100%);
+}
+
+.editorial-background-sand-mist {
+    background: linear-gradient(115deg, var(--sand) 0%, var(--sand) 25%, var(--mist) 100%);
+}

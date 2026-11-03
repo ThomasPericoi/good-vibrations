@@ -7,6 +7,8 @@ $post_id = $args['post_id'] ?? get_the_ID();
 $prefix = $args['prefix'];
 $title = get_field($prefix . '_title', $post_id);
 $subtitle = get_field($prefix . '_subtitle', $post_id);
+$background = get_field($prefix . '_background', $post_id);
+$background = in_array($background, array('mist-sand', 'sand-mist'), true) ? $background : 'sand-mist';
 $primary_cta = gv_get_cta($prefix . '_primary', $post_id);
 $secondary_cta = gv_get_cta($prefix . '_secondary', $post_id);
 $anchor = sanitize_title(ltrim((string) ($args['anchor'] ?? ''), '#'));
@@ -18,8 +20,10 @@ if (!$title && !$subtitle && !$primary_cta && !$secondary_cta) {
 }
 ?>
 
+<!-- Editorial Section -->
 <section<?php if ($anchor): ?> id="<?= esc_attr($anchor); ?>" <?php endif; ?>
-    class="editorial-section <?= esc_attr($section_class); ?>" tabindex="-1">
+    class="editorial-section editorial-background-<?= esc_attr($background); ?> <?= esc_attr($section_class); ?>"
+    tabindex="-1">
     <div class="container container-lg editorial-content">
         <div class="editorial-text">
             <?php if ($title): ?>
@@ -39,6 +43,7 @@ if (!$title && !$subtitle && !$primary_cta && !$secondary_cta) {
                 </div>
             <?php endif; ?>
         </div>
-        <?php get_template_part('template-parts/components/section-next', null, array('anchor' => $next_anchor)); ?>
+
     </div>
+        <?php get_template_part('template-parts/components/section-next', null, array('anchor' => $next_anchor, 'color' => 'light')); ?>
 </section>

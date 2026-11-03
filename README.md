@@ -6,7 +6,6 @@ Custom WordPress theme developed for **VIBÉO**.
 
 * Advanced Custom Fields (ACF) Pro integration with local JSON field groups
 * Static front page assembled from reusable template parts
-* Custom **Réalisations** content type with internal categories
 * Reusable ACF button block and theme-wide CTA component
 * Responsive, keyboard-operable navigation with a no-JavaScript fallback
 * Reduced-motion-aware section reveals and introduction video
@@ -42,10 +41,9 @@ Feature-specific behaviour is organized in dedicated initializer functions.
 
 ### PHP
 
-* `inc`: theme setup, integrations, rendering helpers and content types
+* `inc`: theme setup, integrations and rendering helpers
 * `inc/acf-json`: local ACF field groups for pages, theme options and blocks
 * `inc/blocks`: ACF block registration and templates
-* `inc/post-types`: custom post type declarations
 * `template-parts`: reusable front-end components
 
 ## Requirements
@@ -67,7 +65,7 @@ Rank Math and Contact Form 7 are optional.
 
 This repository contains the theme source and selected VIBÉO brand assets. It does not include a WordPress database, production content, credentials or third-party plugin code.
 
-The built-in WordPress post type is disabled without deleting existing posts. **Réalisations** remain manageable in the dashboard and are not publicly queryable.
+The built-in WordPress post type is disabled without deleting existing posts.
 
 ## Verification
 
@@ -82,6 +80,6 @@ All rights reserved.
 
 Synchroniser le groupe **Page type - Front page** dans ACF. Les deux parties utilisent les préfixes `agency_1` et `agency_2` : titre, sous-titre, deux boutons clonés et ancre suivante.
 
-`front-page-agency.php` appelle deux fois `template-parts/components/editorial-section.php`, avec les ancres `agency-1` et `agency-2`. Tous les champs sont lus à partir du préfixe. `template-parts/components/editorial-section.css` porte les styles communs ; `front-page-agency.css` inverse le dégradé de la première partie.
+`front-page-agency.php` appelle deux fois `template-parts/components/editorial-section.php`, avec les ancres `agency-1` et `agency-2`. Tous les champs sont lus à partir du préfixe. `template-parts/components/editorial-section.css` porte les styles communs et les deux fonds. Le champ ACF `agency_1_background` ou `agency_2_background` choisit le dégradé « Gris → Sable » ou « Sable → Gris ».
 
 La flèche de l’introduction pointe vers `agency-1`, puis celle de la première partie vers `agency-2`. La dernière ancre reste à renseigner lorsqu’une section suivante existe.

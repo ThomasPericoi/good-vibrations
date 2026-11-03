@@ -48,12 +48,10 @@ body {
 
 .js-enabled #main>section:not(.js-alwaysInView) {
     opacity: 0;
-    translate: 0 20px;
-    transition: opacity calc(var(--transition-duration) * 2) ease-out, translate calc(var(--transition-duration) * 2) ease-out;
+    transition: opacity calc(var(--transition-duration) * 2) ease-out;
 
     &.js-inView {
         opacity: 1;
-        translate: 0;
     }
 }
 

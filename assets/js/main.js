@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         setElementState(nav, opened);
-        header?.querySelector('.header-identity')?.toggleAttribute('inert', opened);
         setElementState(main, !opened);
         setElementState(footer, !opened);
     };
@@ -248,29 +247,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Keep the header state in sync with the introduction section.
-    const initIntroHeaderState = () => {
-        const intro = document.querySelector('.front-page-intro');
-        if (!intro) {
-            return;
-        }
-
-        const updateHeader = () => {
-            const rect = intro.getBoundingClientRect();
-            body.classList.toggle('js-introVisible', rect.top <= (header?.offsetHeight || 0) && rect.bottom > (header?.offsetHeight || 0));
-        };
-
-        updateHeader();
-        window.addEventListener('scroll', updateHeader, { passive: true });
-        window.addEventListener('resize', updateHeader, { passive: true });
-    };
-
     root.classList.add('js-enabled');
 
     initLayoutVariables();
     initSignature();
     initRevealOnScroll();
     initMenu();
-    initIntroHeaderState();
     initIntroVideo();
 });

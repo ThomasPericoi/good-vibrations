@@ -4,14 +4,14 @@ $image_id = get_field('conception_image', $post_id);
 $title = get_field('conception_title', $post_id);
 $text = get_field('conception_text', $post_id);
 $services = get_field('conception_services', $post_id);
-$next_anchor = get_field('conception_next_anchor', $post_id);
+$next_anchor = sanitize_title(ltrim((string) get_field('conception_next_anchor', $post_id), '#'));
 
 if (!$image_id && !$title && !$text && !$services) {
     return;
 }
 ?>
 
-<section id="conception" class="front-page-conception" tabindex="-1">
+<section id="conception" class="front-page-conception <?= $next_anchor ? 'has-section-next' : ''; ?>" tabindex="-1">
     <?php if ($image_id): ?>
         <div class="conception-media">
             <?= wp_get_attachment_image($image_id, 'full', false, array('sizes' => '(min-width: 992px) 31vw, 100vw')); ?>

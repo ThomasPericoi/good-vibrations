@@ -13,7 +13,7 @@ $logo = $logo_id ? wp_get_attachment_image($logo_id, 'full', false, array(
     'loading' => 'eager',
     'alt' => get_post_meta($logo_id, '_wp_attachment_image_alt', true) ?: get_bloginfo('name'),
 )) : '';
-$next_anchor = get_field('intro_next_anchor', $post_id);
+$next_anchor = sanitize_title(ltrim((string) get_field('intro_next_anchor', $post_id), '#'));
 
 if (!$video_url && !$logo) {
     return;
@@ -21,7 +21,7 @@ if (!$video_url && !$logo) {
 ?>
 
 <!-- Introduction -->
-<section id="intro" class="front-page-intro js-alwaysInView">
+<section id="intro" class="front-page-intro js-alwaysInView <?= $next_anchor ? 'has-section-next' : ''; ?>">
     <?php if ($video_url && strpos((string) $video_type, 'video/') === 0): ?>
         <video class="intro-video" muted loop playsinline autoplay aria-hidden="true"
             src="<?= esc_url($video_url); ?>">

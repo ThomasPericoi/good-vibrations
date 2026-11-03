@@ -14,6 +14,10 @@ body.js-menuOpened {
     background-color: transparent;
 }
 
+.js-enabled #header {
+    mix-blend-mode: difference;
+}
+
 #header>.container {
     max-width: none;
     padding-inline: 7%;
@@ -32,6 +36,14 @@ body.js-menuOpened {
 .menu-toggle {
     position: relative;
     z-index: 2;
+}
+
+.js-enabled #header .header-identity {
+    visibility: hidden;
+}
+
+.js-menuOpened #header .header-identity {
+    visibility: visible;
 }
 
 #header .custom-logo {
@@ -194,7 +206,7 @@ html:not(.js-enabled) #header {
     display: none;
     align-items: center;
     gap: 0.75rem;
-    color: inherit;
+    color: var(--white);
     background: transparent;
     border: 0;
     cursor: pointer;
@@ -258,6 +270,10 @@ html:not(.js-enabled) #header {
 
 .js-menuOpened .menu-toggle {
     color: var(--white);
+}
+
+.js-menuOpened #header {
+    mix-blend-mode: normal;
 }
 
 .js-menuOpened .menu-toggle-open {

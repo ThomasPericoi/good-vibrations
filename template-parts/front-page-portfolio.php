@@ -40,8 +40,9 @@ if (!$slides) {
         aria-label="<?= esc_attr__('Diaporama du portfolio', 'good-vibrations'); ?>">
         <?php foreach ($slides as $index => $slide): ?>
             <?php $image_url = $slide['image'] ? wp_get_attachment_image_url($slide['image'], 'full') : ''; ?>
+            <?php $slide_next_anchor = sanitize_title(ltrim((string) ($index + 1 < count($slides) ? 'portfolio-slide-' . ($index + 2) : $next_anchor), '#')); ?>
             <section id="portfolio-slide-<?= esc_attr($index + 1); ?>"
-                class="portfolio-slide portfolio-<?= esc_attr($slide['type']); ?>" <?php if ($image_url): ?>
+                class="portfolio-slide portfolio-<?= esc_attr($slide['type']); ?> <?= $slide_next_anchor ? 'has-section-next' : ''; ?>" <?php if ($image_url): ?>
                     style="<?= esc_attr('background-image: url("' . esc_url($image_url) . '");'); ?>" <?php endif; ?> tabindex="-1"
                 aria-label="<?= esc_attr(sprintf(__('Diapositive %1$d sur %2$d', 'good-vibrations'), $index + 1, count($slides))); ?>">
                 <div class="portfolio-content">
@@ -60,7 +61,7 @@ if (!$slides) {
                     aria-hidden="true">
                     <?= esc_html(sprintf('%02d / %02d', $index + 1, count($slides))); ?></p>
                 <?php get_template_part('template-parts/components/section-next', null, array(
-                    'anchor' => $index + 1 < count($slides) ? 'portfolio-slide-' . ($index + 2) : $next_anchor,
+                    'anchor' => $slide_next_anchor,
                     'color' => $slide['color'],
                 )); ?>
             </section>

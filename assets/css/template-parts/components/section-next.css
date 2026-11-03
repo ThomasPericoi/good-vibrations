@@ -1,4 +1,4 @@
-/* #Section Links
+/* #Section Next
 --------------------------------------------------------------- */
 .section-next {
     width: 4.5rem;
@@ -42,36 +42,12 @@
 }
 
 @media screen and (min-width: 992px) {
-
     .section-next:hover,
     .section-next:focus-visible {
         translate: 0.5rem 0;
     }
 }
 
-/* Anchor positioning is relative to the whole section. */
-#main>section:has(>.section-next) {
+.has-section-next {
     position: relative;
-}
-
-#main>section:has(>.section-next)>:is(.intro-content, .editorial-content, .conception-content, .steps-content, .stares-content) {
-    margin-bottom: 6rem;
-}
-
-@media screen and (min-width: 992px) {
-    #main>section:has(>.section-next)>:is(.intro-content, .editorial-content, .conception-content, .steps-content, .stares-content) {
-        margin-bottom: 0;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    #main>section:has(>.section-next)>:is(.intro-content, .editorial-content, .conception-content) {
-        padding-right: calc(4vw + 5rem);
-    }
-}
-
-@media screen and (min-width: 992px) {
-    #main>:is(.front-page-steps, .front-page-stares):has(>.section-next) {
-        padding-right: calc(4vw + 5rem);
-    }
 }

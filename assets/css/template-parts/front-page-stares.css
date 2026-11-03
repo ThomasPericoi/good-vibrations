@@ -11,6 +11,20 @@
     #main>.front-page-stares {
         padding-block: 6rem;
     }
+
+    #main>.front-page-stares.has-section-next {
+        padding-right: calc(4vw + 5rem);
+    }
+}
+
+.front-page-stares.has-section-next .stares-content {
+    margin-bottom: 6rem;
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-stares.has-section-next .stares-content {
+        margin-bottom: 0;
+    }
 }
 
 .stares-content {

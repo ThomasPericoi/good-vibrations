@@ -57,13 +57,12 @@
     gap: 1rem;
 }
 
-.portfolio-slide:has(>.section-next) .portfolio-content {
+.portfolio-slide.has-section-next .portfolio-content {
     padding-bottom: 9rem;
 }
 
 @media screen and (min-width: 992px) {
-    .portfolio-slide:has(>.section-next) .portfolio-content {
-        padding-right: calc(4vw + 5rem);
+    .portfolio-slide.has-section-next .portfolio-content {
         padding-bottom: 4rem;
     }
 }

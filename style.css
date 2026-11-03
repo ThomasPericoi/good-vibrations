@@ -43,7 +43,6 @@ Text Domain: good-vibrations
 @import "./assets/css/elements/grids.css";
 @import "./assets/css/elements/header.css";
 @import "./assets/css/elements/medias.css";
-@import "./assets/css/elements/section-links.css";
 
 /* #Blocks
 --------------------------------------------------------------- */
@@ -60,6 +59,7 @@ Text Domain: good-vibrations
 @import "./assets/css/template-parts/front-page-stares.css";
 @import "./assets/css/template-parts/front-page-portfolio.css";
 @import "./assets/css/template-parts/components/editorial-section.css";
+@import "./assets/css/template-parts/components/section-next.css";
 
 /* #Templates
 --------------------------------------------------------------- */

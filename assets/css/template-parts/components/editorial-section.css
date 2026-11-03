@@ -26,11 +26,22 @@
     gap: 3rem;
 }
 
+.editorial-section.has-section-next .editorial-content {
+    margin-bottom: 6rem;
+}
+
 @media screen and (min-width: 768px) {
     .editorial-section .editorial-content {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .editorial-section.has-section-next .editorial-content {
+        margin-bottom: 0;
+        padding-right: calc(4vw + 5rem);
     }
 }
 

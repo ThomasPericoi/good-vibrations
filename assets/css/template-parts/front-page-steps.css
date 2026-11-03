@@ -9,11 +9,25 @@
     color: var(--black);
 }
 
+.front-page-steps.has-section-next .steps-content {
+    margin-bottom: 6rem;
+}
+
 @media screen and (min-width: 1200px) {
     #main>.front-page-steps {
         position: relative;
         padding: 6rem 14% 6rem 7%;
         justify-content: center;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #main>.front-page-steps.has-section-next {
+        padding-right: calc(4vw + 5rem);
+    }
+
+    .front-page-steps.has-section-next .steps-content {
+        margin-bottom: 0;
     }
 }
 

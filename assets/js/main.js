@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menu-toggle');
     const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     let adminBarVisibleHeight;
+    let menuTransition = 0;
 
     // Toggle inert and aria-hidden together for accessible hidden states.
     const setElementState = (element, enabled) => {
@@ -23,7 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Open or close the main navigation and protect the rest of the page.
     const setMenuState = (opened) => {
-        body.classList.toggle('js-menuOpened', opened);
+        const wasOpened = body.classList.contains('js-menuOpened');
+        if (opened || wasOpened) {
+            const transition = ++menuTransition;
+            body.classList.toggle('js-menuClosing', !opened);
+            body.classList.toggle('js-menuOpened', opened);
+
+            if (!opened) {
+                // Keep the fading overlay out of the header's difference blend mode.
+                const animations = nav ? nav.getAnimations() : [];
+                Promise.allSettled(animations.map((animation) => animation.finished)).then(() => {
+                    if (transition === menuTransition) {
+                        body.classList.remove('js-menuClosing');
+                    }
+                });
+            }
+        }
 
         if (menuToggle) {
             menuToggle.setAttribute('aria-expanded', opened ? 'true' : 'false');

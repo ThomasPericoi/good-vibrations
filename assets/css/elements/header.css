@@ -272,7 +272,8 @@ html:not(.js-enabled) #header {
     color: var(--white);
 }
 
-.js-menuOpened #header {
+.js-menuOpened #header,
+.js-menuClosing #header {
     mix-blend-mode: normal;
 }
 

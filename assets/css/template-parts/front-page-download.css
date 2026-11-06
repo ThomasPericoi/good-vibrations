@@ -1,0 +1,22 @@
+/* #Front Page Download
+--------------------------------------------------------------- */
+@media screen and (min-width: 992px) {
+    .front-page-download .download-content {
+        max-width: 54vw;
+    }
+}
+
+.download-title {
+    margin-bottom: 1.5rem;
+}
+
+.download-title strong {
+    display: block;
+    font-size: 0.8em;
+}
+
+.form-notice {
+    margin: 0 0 2rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}

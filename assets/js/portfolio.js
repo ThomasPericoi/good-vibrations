@@ -25,12 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         return closest;
     };
-    const goToSlide = (slide, focus = true) => {
+    const goToSlide = (slide) => {
         const left = getSlideLeft(slide);
         track.scrollTo({ left, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
-        if (focus) {
-            slide.focus({ preventScroll: true });
-        }
     };
 
     // Mouse dragging complements native touch scrolling.
@@ -75,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             suppressClick = true;
             window.setTimeout(() => { suppressClick = false; }, 0);
             if (snap && desktop.matches) {
-                goToSlide(slides[index], false);
+                goToSlide(slides[index]);
             }
         }
     };
@@ -110,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             window.history.pushState(null, '', link.href);
-            target.focus({ preventScroll: true });
             window.scrollTo({
                 top: target.getBoundingClientRect().top + window.scrollY,
                 behavior: reducedMotion.matches ? 'instant' : 'smooth',
@@ -177,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollBy({ top: rect.top, behavior: 'instant' });
         }
         lockedUntil = now + (reducedMotion.matches ? 200 : 650);
-        goToSlide(target, false);
+        goToSlide(target);
     }, { passive: false });
 
     desktop.addEventListener('change', () => {

@@ -8,7 +8,7 @@ function gv_change_login_logo()
     <style type="text/css">
         #login h1 a,
         .login h1 a {
-            background-image: url("<?php echo esc_url(get_theme_file_uri('/assets/medias/images/VIBÉO-tagline.svg')); ?>");
+            background-image: url("<?php echo esc_url(get_theme_file_uri('/assets/medias/images/VIBEEO.png')); ?>");
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
@@ -43,7 +43,6 @@ function gv_change_admin_bar_logo()
             background-repeat: no-repeat;
             background-size: contain;
             color: transparent;
-            filter: brightness(0) invert(1);
         }
     </style>
 <?php }

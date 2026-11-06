@@ -75,4 +75,4 @@
         <?php endif; ?>
     </header>
 
-    <main id="main" tabindex="-1">
+    <main id="main">

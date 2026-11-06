@@ -63,3 +63,19 @@ textarea {
 .search-form label {
     flex: 1 1 15rem;
 }
+
+/* Contact Form 7 */
+.form-on-background :is(input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not([type="hidden"]), textarea, select) {
+    min-height: 4.5rem;
+    background-color: transparent;
+    border-color: var(--black);
+}
+
+.wpcf7 .wpcf7-form-control-wrap {
+    display: block;
+    margin-block: 1rem;
+}
+
+.wpcf7 .wpcf7-response-output {
+    margin-inline: 0;
+}

@@ -948,11 +948,13 @@
         },
         {
             "key": "field_gv_portfolio_title",
-            "name": "portfolio_title",
             "label": "Titre d’introduction",
+            "name": "portfolio_title",
+            "aria-label": "",
             "type": "textarea",
-            "required": 0,
             "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -960,15 +962,19 @@
             },
             "rows": 2,
             "new_lines": "br",
-            "default_value": ""
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
         },
         {
             "key": "field_gv_portfolio_intro_arrow",
-            "name": "portfolio_intro_arrow",
             "label": "Couleur des flèches et de la pagination",
+            "name": "portfolio_intro_arrow",
+            "aria-label": "",
             "type": "select",
-            "required": 0,
             "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -979,7 +985,14 @@
                 "light": "Claire"
             },
             "default_value": "dark",
-            "return_format": "value"
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_gv_portfolio_intro",
@@ -1005,11 +1018,13 @@
         },
         {
             "key": "field_gv_portfolio_projects",
-            "name": "portfolio_projects",
             "label": "Portfolio",
+            "name": "portfolio_projects",
+            "aria-label": "",
             "type": "repeater",
-            "required": 0,
             "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -1019,14 +1034,18 @@
             "min": 0,
             "max": 0,
             "button_label": "Ajouter un projet",
+            "rows_per_page": 20,
+            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_gv_portfolio_project_image",
-                    "name": "portfolio_project_image",
                     "label": "Image",
+                    "name": "portfolio_project_image",
+                    "aria-label": "",
                     "type": "image",
-                    "required": 0,
                     "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -1034,41 +1053,67 @@
                     },
                     "return_format": "id",
                     "preview_size": "medium",
-                    "library": "all"
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_gv_portfolio_projects"
                 },
                 {
                     "key": "field_gv_portfolio_project_label",
-                    "name": "portfolio_project_label",
                     "label": "Surtitre",
+                    "name": "portfolio_project_label",
+                    "aria-label": "",
                     "type": "text",
-                    "required": 0,
                     "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
-                    }
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_gv_portfolio_projects"
                 },
                 {
                     "key": "field_gv_portfolio_project_title",
-                    "name": "portfolio_project_title",
                     "label": "Titre",
+                    "name": "portfolio_project_title",
+                    "aria-label": "",
                     "type": "text",
-                    "required": 0,
                     "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
-                    }
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_gv_portfolio_projects"
                 },
                 {
                     "key": "field_gv_portfolio_project_arrow",
-                    "name": "portfolio_project_arrow",
                     "label": "Couleur des flèches et de la pagination",
+                    "name": "portfolio_project_arrow",
+                    "aria-label": "",
                     "type": "select",
-                    "required": 0,
                     "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -1079,17 +1124,27 @@
                         "light": "Claire"
                     },
                     "default_value": "dark",
-                    "return_format": "value"
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "parent_repeater": "field_gv_portfolio_projects"
                 }
             ]
         },
         {
             "key": "field_gv_portfolio_closing_image",
-            "name": "portfolio_closing_image",
             "label": "Image de conclusion",
+            "name": "portfolio_closing_image",
+            "aria-label": "",
             "type": "image",
-            "required": 0,
             "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -1097,7 +1152,14 @@
             },
             "return_format": "id",
             "preview_size": "medium",
-            "library": "all"
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_gv_portfolio_closing",
@@ -1123,11 +1185,13 @@
         },
         {
             "key": "field_gv_portfolio_closing_arrow",
-            "name": "portfolio_closing_arrow",
             "label": "Couleur des flèches et de la pagination",
+            "name": "portfolio_closing_arrow",
+            "aria-label": "",
             "type": "select",
-            "required": 0,
             "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -1138,25 +1202,196 @@
                 "light": "Claire"
             },
             "default_value": "dark",
-            "return_format": "value"
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_gv_portfolio_next_anchor",
-            "name": "portfolio_next_anchor",
             "label": "Ancre de la section suivante",
+            "name": "portfolio_next_anchor",
+            "aria-label": "",
             "type": "text",
-            "required": 0,
             "instructions": "Identifiant sans # de la section après le portfolio. Laisser vide pour masquer la dernière flèche.",
+            "required": 0,
+            "conditional_logic": false,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": ""
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6aedecaa8b837",
+            "label": "8) Téléchargez le portfolio",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_gv_download_background",
+            "label": "Fond",
+            "name": "download_background",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Sens du dégradé de la section.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "mist-sand": "Gris → Sable",
+                "sand-mist": "Sable → Gris"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_gv_download_title",
+            "label": "Titre",
+            "name": "download_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Les retours à ligne sont pris en compte.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_gv_download_subtitle",
+            "label": "Sous-titre",
+            "name": "download_subtitle",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Les retours à ligne sont pris en compte.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_gv_download_notice",
+            "name": "download_notice",
+            "label": "Notice du formulaire",
+            "type": "text",
+            "instructions": "Texte affiché au-dessus du formulaire pour indiquer les champs obligatoires.",
+            "required": 0,
+            "default_value": "",
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_gv_download_form",
+            "name": "download_form",
+            "label": "Formulaire Contact Form 7",
+            "type": "post_object",
+            "post_type": [
+                "wpcf7_contact_form"
+            ],
+            "taxonomy": [],
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 1,
+            "ui": 1,
+            "required": 0,
+            "instructions": "Sélectionner le formulaire créé dans Contact. Les champs, libellés, message sur les champs obligatoires et bouton se configurent dans CF7."
+        },
+        {
+            "key": "field_gv_download_next_anchor",
+            "label": "Ancre de la section suivante",
+            "name": "download_next_anchor",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Identifiant sans # de la section suivante. Laisser vide pour masquer la flèche.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6aedecb88b838",
+            "label": "9) Projet à découvrir",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_6ae4a3dd529ac",
-            "label": "8) Contact",
+            "label": "10) Contact",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -1330,5 +1565,5 @@
     "display_title": "Options de la page d'accueil",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1793714044
+    "modified": 1793978260
 }

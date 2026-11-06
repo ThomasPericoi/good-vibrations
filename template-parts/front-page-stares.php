@@ -10,7 +10,7 @@ if (!$title && !$members) {
 ?>
 
 <!-- Stares -->
-<section id="stares" class="front-page-stares <?= $next_anchor ? 'has-section-next' : ''; ?>" tabindex="-1">
+<section id="stares" class="front-page-stares <?= $next_anchor ? 'has-section-next' : ''; ?>">
     <div class="stares-content">
         <?php if ($title): ?>
             <h2 class="stares-title"><?= wp_kses($title, array('br' => array())); ?></h2>

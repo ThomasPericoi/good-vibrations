@@ -166,26 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
             closeMenu();
             menuToggle.focus({ preventScroll: true });
 
-            const url = new URL(link.href, window.location.href);
-            if ((link.target && link.target !== '_self') || link.hasAttribute('download') || url.origin !== window.location.origin || url.pathname !== window.location.pathname || url.search !== window.location.search || !url.hash) {
-                return;
-            }
-
-            let target;
-            try {
-                target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
-            } catch {
-                return;
-            }
-
-            if (target) {
-                if (!target.hasAttribute('tabindex')) {
-                    target.setAttribute('tabindex', '-1');
-                    target.addEventListener('blur', () => target.removeAttribute('tabindex'), { once: true });
-                }
-                // Keep native anchor scrolling and history, without a second scroll.
-                target.focus({ preventScroll: true });
-            }
         });
 
         document.addEventListener('keydown', (event) => {

@@ -13,7 +13,7 @@ if (!$title && !$steps && !$primary_cta && !$secondary_cta) {
 ?>
 
 <!-- Steps -->
-<section id="steps" class="front-page-steps editorial-background-<?= esc_attr($background); ?> <?= $next_anchor ? 'has-section-next' : ''; ?>" tabindex="-1">
+<section id="steps" class="front-page-steps editorial-background-<?= esc_attr($background); ?> <?= $next_anchor ? 'has-section-next' : ''; ?>">
     <div class="steps-content">
         <?php if ($title): ?>
             <h2 class="steps-title"><?= wp_kses($title, array('br' => array())); ?></h2>

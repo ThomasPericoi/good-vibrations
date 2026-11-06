@@ -11,7 +11,7 @@ if (!$image_id && !$title && !$text && !$services) {
 }
 ?>
 
-<section id="conception" class="front-page-conception <?= $next_anchor ? 'has-section-next' : ''; ?>" tabindex="-1">
+<section id="conception" class="front-page-conception <?= $next_anchor ? 'has-section-next' : ''; ?>">
     <?php if ($image_id): ?>
         <div class="conception-media">
             <?= wp_get_attachment_image($image_id, 'full', false, array('sizes' => '(min-width: 992px) 31vw, 100vw')); ?>

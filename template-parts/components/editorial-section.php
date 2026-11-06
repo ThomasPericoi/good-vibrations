@@ -22,8 +22,7 @@ if (!$title && !$subtitle && !$primary_cta && !$secondary_cta) {
 
 <!-- Editorial Section -->
 <section<?php if ($anchor): ?> id="<?= esc_attr($anchor); ?>" <?php endif; ?>
-    class="editorial-section editorial-background-<?= esc_attr($background); ?> <?= esc_attr($section_class); ?> <?= $next_anchor ? 'has-section-next' : ''; ?>"
-    tabindex="-1">
+    class="editorial-section editorial-background-<?= esc_attr($background); ?> <?= esc_attr($section_class); ?> <?= $next_anchor ? 'has-section-next' : ''; ?>">
     <div class="container container-lg editorial-content">
         <div class="editorial-text">
             <?php if ($title): ?>

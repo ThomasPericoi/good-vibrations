@@ -50,7 +50,7 @@
     flex: 1;
 }
 
-.editorial-section .editorial-title {
+.editorial-title {
     font-size: clamp(2rem, 5.6vw, 5rem);
     font-weight: 300;
     line-height: 1.08;
@@ -58,7 +58,7 @@
     text-wrap: initial;
 }
 
-.editorial-section .editorial-subtitle {
+.editorial-subtitle {
     color: var(--white);
     font-size: clamp(1.5rem, 3.4vw, 3rem);
     font-weight: 500;
@@ -67,7 +67,7 @@
     overflow-wrap: break-word;
 }
 
-.editorial-section .editorial-title+.editorial-subtitle {
+.editorial-title+.editorial-subtitle {
     margin-top: 0.5rem;
 }
 

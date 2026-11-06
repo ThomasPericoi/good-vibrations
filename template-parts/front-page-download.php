@@ -20,15 +20,11 @@ if (!$title && !$subtitle && !$form) {
 <section id="download" class="editorial-section front-page-download editorial-background-<?= esc_attr($background); ?> <?= $next_anchor ? 'has-section-next' : ''; ?>">
     <div class="container container-lg editorial-content">
         <div class="editorial-text download-content">
-        <?php if ($title || $subtitle): ?>
-            <h2 class="editorial-title download-title">
-                <?php if ($title): ?>
-                    <?= wp_kses($title, array('br' => array())); ?>
-                <?php endif; ?>
-                <?php if ($subtitle): ?>
-                    <strong><?= wp_kses($subtitle, array('br' => array())); ?></strong>
-                <?php endif; ?>
-            </h2>
+        <?php if ($title): ?>
+            <h2 class="editorial-title"><?= wp_kses($title, array('br' => array())); ?></h2>
+        <?php endif; ?>
+        <?php if ($subtitle): ?>
+            <p class="editorial-subtitle"><?= wp_kses($subtitle, array('br' => array())); ?></p>
         <?php endif; ?>
         <?php if ($form): ?>
             <div class="form-on-background">

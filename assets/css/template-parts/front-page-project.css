@@ -1,0 +1,83 @@
+/* #Front Page Project
+--------------------------------------------------------------- */
+#main>.front-page-project {
+    padding: 0;
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-project .project-track {
+        min-height: 100svh;
+        align-items: center;
+        gap: 0.5rem;
+        padding-block: 8svh;
+    }
+}
+
+.front-page-project .project-track .portfolio-slide {
+    min-height: 0;
+    background: none;
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-project .project-track .portfolio-slide {
+        flex: 0 0 auto;
+    }
+}
+
+.front-page-project .project-intro .portfolio-content {
+    gap: 3rem;
+}
+
+@media screen and (min-width: 992px) {
+
+    .front-page-project .project-intro .portfolio-content,
+    .front-page-project .project-intro.has-section-next .portfolio-content {
+        width: max-content;
+        max-width: 40rem;
+        min-height: 68svh;
+        padding: 0 9rem 0 3vw;
+        justify-content: space-between;
+    }
+}
+
+.front-page-project .project-name {
+    font-weight: 900;
+}
+
+.front-page-project .project-text {
+    margin-block: 1rem 2rem;
+}
+
+.front-page-project .project-image {
+    padding: 2rem 7%;
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-project .project-image {
+        padding: 0;
+    }
+}
+
+.front-page-project .project-image.has-section-next {
+    padding-bottom: 9rem;
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-project .project-image.has-section-next {
+        padding-bottom: 0;
+    }
+}
+
+.front-page-project .project-image>img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (min-width: 992px) {
+    .front-page-project .project-image>img {
+        width: auto;
+        height: 68svh;
+        max-width: none;
+    }
+}

@@ -6,17 +6,13 @@
     }
 }
 
-.download-title {
-    margin-bottom: 1.5rem;
+.front-page-download .editorial-subtitle {
+    color: var(--black);
+    font-weight: 700;
 }
 
-.download-title strong {
-    display: block;
-    font-size: 0.8em;
-}
-
-.form-notice {
-    margin: 0 0 2rem;
+.front-page-download .form-notice {
+    margin: 2rem 0;
     font-size: 0.875rem;
     line-height: 1.5;
 }

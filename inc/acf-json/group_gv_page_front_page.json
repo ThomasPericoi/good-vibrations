@@ -1322,23 +1322,38 @@
         },
         {
             "key": "field_gv_download_notice",
-            "name": "download_notice",
             "label": "Notice du formulaire",
+            "name": "download_notice",
+            "aria-label": "",
             "type": "text",
             "instructions": "Texte affiché au-dessus du formulaire pour indiquer les champs obligatoires.",
             "required": 0,
-            "default_value": "",
+            "conditional_logic": false,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
-            }
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_gv_download_form",
-            "name": "download_form",
             "label": "Formulaire Contact Form 7",
+            "name": "download_form",
+            "aria-label": "",
             "type": "post_object",
+            "instructions": "Sélectionner le formulaire créé dans Contact. Les champs, libellés, message sur les champs obligatoires et bouton se configurent dans CF7.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "post_type": [
                 "wpcf7_contact_form"
             ],
@@ -1347,8 +1362,7 @@
             "multiple": 0,
             "allow_null": 1,
             "ui": 1,
-            "required": 0,
-            "instructions": "Sélectionner le formulaire créé dans Contact. Les champs, libellés, message sur les champs obligatoires et bouton se configurent dans CF7."
+            "bidirectional_target": []
         },
         {
             "key": "field_gv_download_next_anchor",
@@ -1388,6 +1402,258 @@
             "placement": "left",
             "endpoint": 0,
             "selected": 0
+        },
+        {
+            "key": "field_gv_project_background",
+            "label": "Fond",
+            "name": "project_background",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Sens du dégradé de la section.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "mist-sand": "Gris → Sable",
+                "sand-mist": "Sable → Gris"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 1,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_gv_project_title",
+            "label": "Titre",
+            "name": "project_title",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Les retours à ligne sont pris en compte.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_gv_project_subtitle",
+            "label": "Sous-titre",
+            "name": "project_subtitle",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Les retours à ligne sont pris en compte.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_gv_project_name",
+            "label": "Nom du projet",
+            "name": "project_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_gv_project_label",
+            "label": "Type de projet",
+            "name": "project_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_gv_project_text",
+            "label": "Présentation",
+            "name": "project_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 8,
+            "new_lines": "br",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_gv_project_primary",
+            "label": "Bouton",
+            "name": "project_primary",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_gv_component_button"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_gv_project_arrow",
+            "label": "Couleur de la flèche",
+            "name": "project_arrow",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "dark": "Sombre",
+                "light": "Claire"
+            },
+            "default_value": "dark",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_gv_project_images",
+            "label": "Images",
+            "name": "project_images",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "button_label": "Ajouter une image",
+            "rows_per_page": 20,
+            "collapsed": "",
+            "sub_fields": [
+                {
+                    "key": "field_gv_project_image",
+                    "label": "Image",
+                    "name": "project_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_gv_project_images"
+                }
+            ]
+        },
+        {
+            "key": "field_gv_project_next_anchor",
+            "label": "Ancre de la section suivante",
+            "name": "project_next_anchor",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Identifiant sans # de la section après le portfolio. Laisser vide pour masquer la dernière flèche.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_6ae4a3dd529ac",
@@ -1565,5 +1831,5 @@
     "display_title": "Options de la page d'accueil",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1793978260
+    "modified": 1793982738
 }

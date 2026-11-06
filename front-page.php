@@ -58,6 +58,10 @@ get_template_part('template-parts/front-page-download', null, array(
     'post_id' => $front_page_id,
 ));
 
+get_template_part('template-parts/front-page-project', null, array(
+    'post_id' => $front_page_id,
+));
+
 get_template_part('template-parts/components/editorial-section', null, array(
     'post_id' => $front_page_id,
     'prefix' => 'contact',

@@ -130,11 +130,6 @@
     align-items: center;
 }
 
-.portfolio-closing .btn {
-    padding: 2rem 3rem;
-    text-align: center;
-}
-
 .portfolio-pagination {
     position: absolute;
     right: 7%;

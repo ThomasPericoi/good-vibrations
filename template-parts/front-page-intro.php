@@ -7,6 +7,10 @@ if (!function_exists('get_field')) {
 $video_id = (int) get_field('intro_video', $post_id);
 $video_url = $video_id ? wp_get_attachment_url($video_id) : '';
 $video_type = $video_id ? get_post_mime_type($video_id) : '';
+$video_url = strpos((string) $video_type, 'video/') === 0 ? $video_url : '';
+$mobile_video_id = (int) get_field('intro_video_mobile', $post_id);
+$mobile_video_type = $mobile_video_id ? get_post_mime_type($mobile_video_id) : '';
+$mobile_video_url = strpos((string) $mobile_video_type, 'video/') === 0 ? wp_get_attachment_url($mobile_video_id) : '';
 $logo_id = (int) (get_field('intro_logo', $post_id) ?: get_theme_mod('custom_logo'));
 $logo = $logo_id ? wp_get_attachment_image($logo_id, 'full', false, array(
     'class' => 'intro-logo',
@@ -15,16 +19,17 @@ $logo = $logo_id ? wp_get_attachment_image($logo_id, 'full', false, array(
 )) : '';
 $next_anchor = sanitize_title(ltrim((string) get_field('intro_next_anchor', $post_id), '#'));
 
-if (!$video_url && !$logo) {
+if (!$video_url && !$mobile_video_url && !$logo) {
     return;
 }
 ?>
 
 <!-- Introduction -->
 <section id="intro" class="front-page-intro js-alwaysInView <?= $next_anchor ? 'has-section-next' : ''; ?>">
-    <?php if ($video_url && strpos((string) $video_type, 'video/') === 0): ?>
-        <video class="intro-video" muted loop playsinline autoplay aria-hidden="true"
-            src="<?= esc_url($video_url); ?>">
+    <?php if ($video_url || $mobile_video_url): ?>
+        <video class="intro-video" muted loop playsinline preload="none" aria-hidden="true"
+            data-desktop-src="<?= esc_url($video_url); ?>"
+            data-mobile-src="<?= esc_url($mobile_video_url); ?>">
         </video>
     <?php endif; ?>
 

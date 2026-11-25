@@ -125,6 +125,11 @@
     overflow-wrap: anywhere;
 }
 
+.portfolio-project.portfolio-slide-light .portfolio-title,
+.portfolio-project.portfolio-slide-light .portfolio-label {
+    color: var(--white);
+}
+
 .portfolio-closing .portfolio-content {
     justify-content: center;
     align-items: center;

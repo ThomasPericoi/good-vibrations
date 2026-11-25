@@ -218,12 +218,24 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        const desktop = window.matchMedia('(min-width: 992px)');
         const rect = intro.getBoundingClientRect();
         let visible = rect.bottom > 0 && rect.top < window.innerHeight;
         const updatePlayback = () => {
             if (!visible || document.hidden || reduceMotionQuery.matches) {
                 video.pause();
             } else {
+                const source = desktop.matches ? video.dataset.desktopSrc : (video.dataset.mobileSrc || video.dataset.desktopSrc);
+                if (!source) {
+                    video.pause();
+                    video.removeAttribute('src');
+                    video.load();
+                    return;
+                }
+                if (video.getAttribute('src') !== source) {
+                    video.src = source;
+                    video.load();
+                }
                 // Autoplay can be blocked by the browser or power-saving mode.
                 video.play().catch(() => {});
             }
@@ -231,6 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updatePlayback();
         reduceMotionQuery.addEventListener('change', updatePlayback);
+        desktop.addEventListener('change', updatePlayback);
         document.addEventListener('visibilitychange', updatePlayback);
 
         if ('IntersectionObserver' in window) {

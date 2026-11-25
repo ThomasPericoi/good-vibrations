@@ -22,11 +22,31 @@
         },
         {
             "key": "field_gv_intro_video",
-            "label": "Vidéo de fond",
+            "label": "Vidéo de fond — Desktop",
             "name": "intro_video",
             "aria-label": "",
             "type": "file",
-            "instructions": "Vidéo décorative, lue sans son et en boucle.",
+            "instructions": "Vidéo décorative, lue sans son et en boucle à partir de 992 px. Également utilisée sur mobile si aucune vidéo mobile n’est renseignée.",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "mime_types": "mp4,webm",
+            "min_size": 0,
+            "max_size": 0
+        },
+        {
+            "key": "field_gv_intro_video_mobile",
+            "label": "Vidéo de fond — Mobile",
+            "name": "intro_video_mobile",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "Vidéo décorative pour les écrans de moins de 992 px. Facultative : utilise la vidéo desktop si ce champ est vide.",
             "required": 0,
             "conditional_logic": false,
             "wrapper": {
@@ -1831,5 +1851,5 @@
     "display_title": "Options de la page d'accueil",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1793982738
+    "modified": 1795623696
 }
